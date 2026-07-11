@@ -417,16 +417,16 @@
 
     // Dynamic pricing
   (function() {
-    var earlyBirdDeadline = new Date('2026-07-10T23:59:59');
+    var earlyBirdDeadline = new Date('2026-07-14T23:59:59');
     var now = new Date();
     var price = now <= earlyBirdDeadline ? '₹1,999' : '₹2,999';
     var isEarly = now <= earlyBirdDeadline;
     var el = document.getElementById('modal-price');
     if (el) el.textContent = price;
     var banner = document.getElementById('modal-price-banner');
-    if (banner) banner.textContent = isEarly ? 'Early bird: ' + price + ' · Offer ends 10 July' : 'Workshop fee: ' + price;
+    if (banner) banner.textContent = isEarly ? 'Early bird: ' + price + ' · Offer ends 14 July' : 'Workshop fee: ' + price;
     var note = document.getElementById('price-note');
-    if (note) note.textContent = isEarly ? '(Early bird: ₹1,999 until 10 July, ₹2,999 thereafter)' : '(Workshop fee: ₹2,999)';
+    if (note) note.textContent = isEarly ? '(Early bird: ₹1,999 until 14 July, ₹2,999 thereafter)' : '(Workshop fee: ₹2,999)';
   })();
 
   document.getElementById('reg-form').addEventListener('submit', async function(e) {

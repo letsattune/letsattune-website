@@ -8,10 +8,7 @@ Things to do on the website — add new items here, check them off when done.
 
 - [ ] Blog links section on about.html — placeholder exists but no actual blog links added yet
 - [ ] Review About page on mobile — float layout (photo + text) may need adjustment on small screens
-- [ ] ⚠️ Verify Formspree email — shilpa@letsattune.com must click confirmation link from Formspree before registrations/contact forms come through
-- [ ] Add Kalki's photo to workshops.html (currently showing a placeholder "K" avatar — needs assets/kalki.jpg or similar)
-- [ ] Check index.html and about.html — nav may still say "Workshops" and link to old Google Form; should match new nav (Upcoming Event + Contact Us → contact.html)
-- [ ] assets/upi-qr.svg is referenced in workshop modal thank-you but may not exist — verify or replace with qr.png
+- [ ] Google Analytics event tracking — currently tracking page views only; register button clicks not yet tracked
 
 ## ✅ Done this project
 
@@ -50,3 +47,12 @@ Things to do on the website — add new items here, check them off when done.
 - [x] Nav updated across site: "Workshops" → "Upcoming Event", Contact Us → contact.html
 - [x] Added thank-you message + UPI QR payment flow after form submission
 - [x] Pre-approved permissions for memory and .claude/ files in settings.json (no more prompts)
+- [x] Mobile fixes — How We Help steps stack vertically, contact page heading fixed, QR image responsive, Kalki photo shrinks on small screens
+- [x] Facilitator sections on workshops page — photo stacks above text on mobile
+- [x] Removed hover effect from Who We Work With pills
+- [x] Replaced all em dashes with hyphens across all pages
+- [x] Added UPI QR code (assets/upi-qr.jpeg) to workshop modal thank-you screen
+- [x] Added Kalki's photo (assets/kalki.jpg) replacing placeholder avatar
+- [x] Formspree verified — test submission received successfully
+- [x] Google Analytics added to all 4 pages (G-HD6TJQ2L2W)
+- [x] Site moved to www.letsattune.com (CNAME updated by Santosh)
