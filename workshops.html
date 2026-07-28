@@ -35,14 +35,35 @@
     .wk-past-hero h1 { color: #fff; margin: 0.4rem auto 0; max-width: 24ch; }
     .wk-past-hero p { color: rgba(255,255,255,0.68); max-width: 46ch; margin: 0.8rem auto 0; font-size: 0.95rem; line-height: 1.7; }
 
-    .wk-photo {
-      width: 100%; max-height: 480px; object-fit: cover; display: block;
-      border-radius: 0;
+    .wk-photo-row {
+      display: grid;
+      grid-template-columns: 320px 1fr;
+      gap: 2rem;
+      align-items: center;
+      background: #dbe8e6;
+      border-radius: 12px;
+      overflow: hidden;
+      padding: 1.5rem;
+      margin: 0 auto;
+      max-width: 860px;
     }
-    .wk-photo-caption {
-      text-align: center; font-size: 0.78rem; color: var(--muted);
-      padding: 0.6rem 1rem; background: var(--bg-sage);
-      border-bottom: 1px solid var(--line);
+    .wk-photo-row img {
+      width: 100%;
+      border-radius: 10px;
+      object-fit: contain;
+    }
+    .wk-photo-caption-block .eyebrow { color: var(--steel); margin-bottom: 0.5rem; }
+    .wk-photo-caption-block p {
+      font-family: var(--ff-serif);
+      font-style: italic;
+      font-size: 1rem;
+      color: var(--navy);
+      line-height: 1.75;
+      margin: 0 0 0.6rem;
+    }
+    .wk-photo-caption-block .attr { font-size: 0.82rem; color: var(--muted); font-style: normal; font-family: var(--ff-sans); }
+    @media (max-width: 640px) {
+      .wk-photo-row { grid-template-columns: 1fr; }
     }
 
     .testimonials-grid {
@@ -127,10 +148,18 @@
   </section>
 
   <!-- GROUP PHOTO -->
-  <div>
-    <img class="wk-photo" src="assets/JulyWorkshop2026.jpg" alt="Participants of the Women's Reset and Reconnection Workshop, July 2026" />
-    <p class="wk-photo-caption">Women's Reset and Reconnection Workshop · 25 & 26 July 2026 · Online via Zoom</p>
-  </div>
+  <section class="section band-white">
+    <div class="wrap">
+      <div class="wk-photo-row reveal">
+        <img src="assets/JulyWorkshop2026LW.jpg" alt="Participants of the Women's Reset and Reconnection Workshop, July 2026" />
+        <div class="wk-photo-caption-block">
+          <div class="eyebrow">July 2026 · Online via Zoom</div>
+          <p>"It was such a warm experience. I am truly grateful to everyone who was part of this journey - their stories, their hopes, and what they are looking for ahead. It reminded me, once again, that we are all so capable. Sometimes all we need is a little light to see it."</p>
+          <span class="attr">- Shilpa</span>
+        </div>
+      </div>
+    </div>
+  </section>
 
   <!-- WHAT HAPPENED / TESTIMONIALS -->
   <section class="section band-white">
@@ -142,19 +171,19 @@
       <div class="testimonials-grid">
         <div class="tcard reveal">
           <p>"This workshop was awakening."</p>
-          <span class="tattr">— Participant, Women's Reset & Reconnection</span>
+          <span class="tattr">- Participant</span>
         </div>
         <div class="tcard reveal">
           <p>"I don't want this to end... it felt so good to speak out."</p>
-          <span class="tattr">— Participant, Women's Reset & Reconnection</span>
+          <span class="tattr">- Participant</span>
         </div>
         <div class="tcard reveal">
           <p>"Both sessions helped me slow down and think about things I had not paid attention to."</p>
-          <span class="tattr">— Participant, Women's Reset & Reconnection</span>
+          <span class="tattr">- Participant</span>
         </div>
         <div class="tcard reveal">
           <p>"Great session. Let's stay connected and support each other."</p>
-          <span class="tattr">— Participant, Women's Reset & Reconnection</span>
+          <span class="tattr">- Participant</span>
         </div>
       </div>
 
