@@ -3,11 +3,11 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Women's Reset and Reconnection Workshop | Let's Attune</title>
-  <meta name="description" content="Finding Your Voice, Purpose and Peace again! A 2-day online workshop for women ready to pause, reconnect, and embrace the next chapter. 25 &amp; 26 July 2026, 6:30pm–9:00pm IST on Zoom, with PCC coach Shilpa Jahagirdar." />
+  <title>Workshops | Let's Attune</title>
+  <meta name="description" content="Workshops by Let's Attune — structured group experiences designed for growth, awareness, and reconnection. See what we've run and what's coming next." />
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="Women's Reset and Reconnection Workshop — Let's Attune" />
-  <meta property="og:description" content="Finding Your Voice, Purpose and Peace again. A 2-day online workshop with Shilpa Jahagirdar." />
+  <meta property="og:title" content="Workshops — Let's Attune" />
+  <meta property="og:description" content="Past workshops and upcoming events by Let's Attune with PCC coach Shilpa Jahagirdar." />
   <meta property="og:image" content="assets/shilpa-full.jpg" />
   <meta property="og:url" content="https://letsattune.com/workshops.html" />
   <meta name="twitter:card" content="summary_large_image" />
@@ -26,103 +26,76 @@
   </script>
 
   <style>
-    /* ── REGISTRATION MODAL ─────────────────────────────── */
-    #reg-modal {
-      display: none; position: fixed; inset: 0; z-index: 1000;
-      background: rgba(29,53,87,0.55); backdrop-filter: blur(3px);
-      align-items: flex-start; justify-content: center;
-      overflow-y: auto; padding: 2rem 1rem 3rem;
+    .wk-past-hero {
+      background: var(--navy);
+      padding: clamp(3rem, 8vw, 5rem) 0 clamp(2rem, 5vw, 3.5rem);
+      text-align: center;
     }
-    #reg-modal.open { display: flex; }
-    .reg-card {
-      background: #fff; border-radius: 14px;
-      box-shadow: 0 24px 60px rgba(29,53,87,0.18);
-      width: 100%; max-width: 560px;
-      overflow: hidden; position: relative; margin: auto;
-    }
-    .reg-head {
-      background: var(--navy); padding: 1.8rem 2rem 1.5rem;
-      text-align: center; position: relative;
-    }
-    .reg-head .eyebrow { color: var(--sage); font-size: 0.78rem; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 0.3rem; }
-    .reg-head h3 { font-family: var(--ff-serif); color: #fff; font-size: 1.4rem; font-weight: 600; line-height: 1.25; }
-    .reg-head .sub { color: rgba(255,255,255,0.65); font-size: 0.8rem; margin-top: 0.35rem; }
-    .reg-close {
-      position: absolute; top: 1rem; right: 1rem;
-      background: rgba(255,255,255,0.12); border: none; color: #fff;
-      width: 32px; height: 32px; border-radius: 50%; font-size: 1.1rem;
-      cursor: pointer; display: flex; align-items: center; justify-content: center;
-      transition: background 0.2s;
-    }
-    .reg-close:hover { background: rgba(255,255,255,0.25); }
-    .reg-body { padding: 1.8rem 2rem 2rem; display: flex; flex-direction: column; gap: 1.2rem; }
-    .rf { display: flex; flex-direction: column; gap: 0.32rem; }
-    .rf label { font-size: 0.78rem; font-weight: 500; color: #5a6b7a; letter-spacing: 0.03em; text-transform: uppercase; }
-    .rf label .req { color: var(--coral); }
-    .rf input, .rf select, .rf textarea {
-      font-family: var(--ff-sans); font-size: 0.92rem; color: var(--navy);
-      background: #f3f7f6; border: 1.5px solid #d8e3e1; border-radius: 6px;
-      padding: 0.6rem 0.85rem; outline: none; width: 100%;
-      transition: border-color 0.2s, box-shadow 0.2s;
-    }
-    .rf input:focus, .rf select:focus { border-color: #457b9d; background: #fff; box-shadow: 0 0 0 3px rgba(69,123,157,0.1); }
-    .rf-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
-    .rf-opts { display: flex; flex-direction: column; gap: 0.42rem; }
-    .rf-opt {
-      display: flex; align-items: flex-start; gap: 0.65rem;
-      background: #f3f7f6; border: 1.5px solid #d8e3e1;
-      border-radius: 6px; padding: 0.55rem 0.85rem; cursor: pointer;
-      transition: border-color 0.15s, background 0.15s;
-    }
-    .rf-opt:has(input:checked) { border-color: #457b9d; background: #eaf2f7; }
-    .rf-opt input { width: 15px; height: 15px; margin-top: 2px; flex-shrink: 0; accent-color: #457b9d; }
-    .rf-opt span { font-size: 0.86rem; line-height: 1.45; color: var(--navy); }
-    .rf-opts.inline { flex-direction: row; flex-wrap: wrap; }
-    .rf-opts.inline .rf-opt { flex: 1 1 calc(50% - 0.21rem); }
-    .reg-divider { height: 1px; background: #d8e3e1; }
-    .reg-submit {
-      font-family: var(--ff-sans); font-size: 0.95rem; font-weight: 600;
-      background: var(--coral); color: #fff; border: none;
-      border-radius: 30px; padding: 0.75rem 2rem; cursor: pointer;
-      transition: opacity 0.2s, transform 0.1s; width: 100%; margin-top: 0.4rem;
-    }
-    .reg-submit:hover { opacity: 0.88; }
-    .reg-submit:active { transform: scale(0.98); }
-    .reg-submit:disabled { opacity: 0.5; cursor: not-allowed; }
+    .wk-past-hero .eyebrow { color: var(--sage); }
+    .wk-past-hero h1 { color: #fff; margin: 0.4rem auto 0; max-width: 24ch; }
+    .wk-past-hero p { color: rgba(255,255,255,0.68); max-width: 46ch; margin: 0.8rem auto 0; font-size: 0.95rem; line-height: 1.7; }
 
-    /* Thank you screen */
-    .reg-thankyou {
-      display: none; flex-direction: column; align-items: center;
-      text-align: center; gap: 1rem; padding: 2.4rem 2rem 2.8rem;
+    .wk-photo {
+      width: 100%; max-height: 480px; object-fit: cover; display: block;
+      border-radius: 0;
     }
-    .reg-thankyou.show { display: flex; }
-    .reg-thankyou h3 { font-family: var(--ff-serif); font-size: 1.4rem; color: var(--navy); }
-    .reg-thankyou p { font-size: 0.88rem; color: #5a6b7a; max-width: 360px; line-height: 1.65; }
-    .reg-thankyou .qr-wrap {
-      background: #f3f7f6; border-radius: 10px; padding: 1.2rem 1.4rem;
-      display: flex; flex-direction: column; align-items: center; gap: 0.6rem;
+    .wk-photo-caption {
+      text-align: center; font-size: 0.78rem; color: var(--muted);
+      padding: 0.6rem 1rem; background: var(--bg-sage);
+      border-bottom: 1px solid var(--line);
     }
-    .reg-thankyou .qr-wrap img { width: 160px; height: 160px; object-fit: contain; }
-    .reg-thankyou .qr-label { font-size: 0.78rem; color: #5a6b7a; }
-    .reg-thankyou .qr-amount { font-size: 1rem; font-weight: 600; color: var(--coral); }
-    .reg-thankyou .motto { font-family: var(--ff-serif); font-style: italic; color: #457b9d; font-size: 0.9rem; margin-top: 0.4rem; }
 
-    @media (max-width: 480px) {
-      .reg-body { padding: 1.4rem 1.2rem 1.8rem; }
-      .reg-head { padding: 1.5rem 1.2rem 1.2rem; }
-      .rf-row { grid-template-columns: 1fr; }
-      .rf-opts.inline .rf-opt { flex: 1 1 100%; }
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.2rem;
+      margin-top: 2rem;
     }
+    .tcard {
+      background: #fff;
+      border-radius: 10px;
+      border-left: 4px solid var(--coral);
+      padding: 1.3rem 1.4rem;
+      box-shadow: 0 4px 16px rgba(29,53,87,0.07);
+    }
+    .tcard p {
+      font-size: 0.92rem;
+      color: var(--navy);
+      font-style: italic;
+      line-height: 1.65;
+      margin: 0 0 0.6rem;
+    }
+    .tcard .tattr {
+      font-size: 0.76rem;
+      color: var(--muted);
+      font-style: normal;
+    }
+
+    .coming-soon-band {
+      background: var(--navy);
+      border-radius: 14px;
+      padding: 2.4rem 2rem;
+      text-align: center;
+      margin-top: 3rem;
+    }
+    .coming-soon-band .cs-tag {
+      display: inline-block;
+      background: rgba(171,201,201,0.18);
+      color: var(--sage);
+      font-size: 0.72rem;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 4px 14px;
+      border-radius: 20px;
+      margin-bottom: 1rem;
+      border: 1px solid rgba(171,201,201,0.3);
+    }
+    .coming-soon-band h2 { color: #fff; margin-bottom: 0.6rem; }
+    .coming-soon-band p { color: rgba(255,255,255,0.68); max-width: 44ch; margin: 0 auto 1.4rem; font-size: 0.95rem; line-height: 1.7; }
   </style>
 </head>
 <body>
-
-  <!-- ANNOUNCEMENT BAR -->
-  <div class="announce">
-    <span class="announce-star">★</span>
-    <strong>Women's Reset and Reconnection Workshop</strong> starting soon... ·
-    <a href="#register" onclick="event.preventDefault();openRegModal()">Join now →</a>
-  </div>
 
   <!-- HEADER -->
   <header class="site-header">
@@ -135,133 +108,67 @@
       <nav class="nav">
         <a class="link" href="index.html">Home</a>
         <a class="link" href="about.html">About</a>
-        <a class="link active" href="workshops.html">Upcoming Event</a>
+        <a class="link active" href="workshops.html">Workshops</a>
         <a class="btn btn-primary" href="contact.html">Contact Us</a>
       </nav>
     </div>
   </header>
 
-  <!-- COVER: blurred photo (faces not identifiable) + workshop details overlaid -->
-  <section class="wk-cover">
-    <img src="assets/workshop.jpeg" alt="A Let's Attune women's workshop in session" aria-hidden="true" />
-    <div class="wrap cover-inner reveal">
-      <h1>Women's Reset and Reconnection Workshop</h1>
-      <p class="wk-tagline">Finding Your Voice, Purpose and Peace again!</p>
-      <div class="wk-facts" style="justify-content:center">
-        <span class="fact">🌿 <b>2 Day Program</b></span>
-        <span class="fact">📅 <b>25 &amp; 26 July 2026</b></span>
-        <span class="fact">🕡 <b>6:30pm - 9:00 pm IST</b></span>
-        <span class="fact">💻 <b>Online via Zoom</b></span>
-      </div>
-      <div class="btnrow" style="justify-content:center;margin-top:1.6rem">
-        <button class="btn btn-primary" onclick="openRegModal()" style="min-height:46px;">Join Now</button>
-        <a class="btn btn-ghost" href="https://wa.me/918080166955" target="_blank" rel="noopener" style="color:#fff;border-color:rgba(255,255,255,0.8);">Ask a Question</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- WHO IS THIS FOR -->
-  <section class="section band-white">
-    <div class="wrap center reveal">
-      <h2>Who is this for?</h2>
-      <div class="rule"></div>
-      <p class="lead" style="margin-left:auto;margin-right:auto;max-width:820px">This workshop is for women with changing priorities in life who are ready to pause, reconnect with themselves, and embrace a new chapter of their lives with greater clarity and purpose.</p>
-      <p class="lead" style="margin-left:auto;margin-right:auto;max-width:820px">For women who are navigating multiple roles, responsibilities while feeling disconnected from themselves despite managing life normally on the outside.</p>
-    </div>
-  </section>
-
-  <!-- COMPARE -->
-  <section class="section band-sage">
+  <!-- PAST WORKSHOP HERO -->
+  <section class="wk-past-hero">
     <div class="wrap">
-      <div class="compare">
-        <div class="col now reveal">
-          <h3>Are you one or more of these?</h3>
-          <ul>
-            <li>Wondering where you fit in amidst the many roles and responsibilities you carry?</li>
-            <li>"What do I want for myself now?" after having spent years putting your work, children and family first.</li>
-            <li>Feeling emotionally tired, even though life appears normal for others?</li>
-            <li>Constantly managing responsibilities while realising that there has been very little time or space for yourself.</li>
-            <li>Standing at a crossroads in life, unsure of what comes next, struggling to make a decision, or finding it difficult to move forward?</li>
-          </ul>
+      <div class="eyebrow">Past Workshop · July 2026</div>
+      <h1>Women's Reset and Reconnection</h1>
+      <p>Finding Your Voice, Purpose and Peace again. A 2-day online workshop for women ready to pause, reconnect, and embrace the next chapter.</p>
+    </div>
+  </section>
+
+  <!-- GROUP PHOTO -->
+  <div>
+    <img class="wk-photo" src="assets/workshop-july-2026.jpg" alt="Participants of the Women's Reset and Reconnection Workshop, July 2026" />
+    <p class="wk-photo-caption">Women's Reset and Reconnection Workshop · 25 & 26 July 2026 · Online via Zoom</p>
+  </div>
+
+  <!-- WHAT HAPPENED / TESTIMONIALS -->
+  <section class="section band-white">
+    <div class="wrap reveal">
+      <h2>What participants shared</h2>
+      <div class="rule"></div>
+      <p style="max-width:60ch">It was a privilege to hold this space. Here is what some of the women who attended had to say:</p>
+
+      <div class="testimonials-grid">
+        <div class="tcard reveal">
+          <p>"This workshop was awakening."</p>
+          <span class="tattr">— Participant, Women's Reset & Reconnection</span>
         </div>
-        <div class="col after reveal">
-          <h3>Wouldn't you want to instead?</h3>
-          <ul>
-            <li>Feel like yourself again - confident, capable, and connected to who you truly are.</li>
-            <li>Create space for your own needs, dreams, and aspirations without feeling guilty about it.</li>
-            <li>Trust yourself and your choices, even when life feels uncertain or demanding.</li>
-            <li>Feel balanced and intentional in how you approach your responsibilities, relationships, and future.</li>
-            <li>Look ahead with greater clarity, confidence, and excitement for the life you want to create.</li>
-          </ul>
+        <div class="tcard reveal">
+          <p>"I don't want this to end... it felt so good to speak out."</p>
+          <span class="tattr">— Participant, Women's Reset & Reconnection</span>
+        </div>
+        <div class="tcard reveal">
+          <p>"Both sessions helped me slow down and think about things I had not paid attention to."</p>
+          <span class="tattr">— Participant, Women's Reset & Reconnection</span>
+        </div>
+        <div class="tcard reveal">
+          <p>"Great session. Let's stay connected and support each other."</p>
+          <span class="tattr">— Participant, Women's Reset & Reconnection</span>
         </div>
       </div>
-    </div>
-  </section>
 
-  <!-- WHAT WE EXPLORE -->
-  <section class="section band-white">
-    <div class="wrap center reveal">
-      <h2>What we'll explore together</h2>
-      <div class="rule"></div>
-    </div>
-    <div class="wrap">
-      <div class="steps">
-        <div class="step reveal"><p style="color:var(--navy)">What am I feeling, and what is it trying to tell me?</p></div>
-        <div class="step reveal"><p style="color:var(--navy)">What have my experiences, choices, and responsibilities enriched me with?</p></div>
-        <div class="step reveal"><p style="color:var(--navy)">What do I need in this phase of my life and what do I need to address?</p></div>
-        <div class="step reveal"><p style="color:var(--navy)">And finally... What is one small but meaningful step I am ready to take?</p></div>
+      <div style="text-align:center;margin-top:2.4rem">
+        <a class="btn btn-ghost" href="contact.html?from=workshop">Interested in the next one? Let us know →</a>
       </div>
     </div>
-    <div class="wrap center" style="margin-top:1.4rem">
-      <p style="font-size:0.85rem;color:var(--navy);opacity:0.65;letter-spacing:0.02em">Confidential Conversations - No recordings</p>
-    </div>
   </section>
 
-  <!-- MEET YOUR FACILITATOR (verbatim expert bio) -->
+  <!-- COMING SOON -->
   <section class="section band-sage">
     <div class="wrap reveal">
-      <div class="facilitator-grid">
-        <img class="teaser__photo facilitator-photo" src="assets/shilpa.jpeg" alt="Shilpa Jahagirdar" />
-        <div>
-          <div class="eyebrow">Primary Facilitator</div>
-          <h2>Shilpa Jahagirdar</h2>
-          <div class="role" style="font-size:0.84rem;letter-spacing:0.06em;color:var(--coral);text-transform:uppercase;margin-bottom:0.6rem">ICF Certified Professional Coach (PCC) · Founder, Lets Attune</div>
-          <div class="rule"></div>
-          <p style="margin-top:0.3rem">Shilpa is a PCC-certified coach, founder of Lets Attune, and a passionate explorer of what helps people grow, evolve, and create meaningful change in their lives.</p>
-          <p style="margin-top:0.4rem">Having experienced life as a professional, entrepreneur, wife, and mother of two, she understands the many transitions, responsibilities, and questions people often carry.</p>
-        </div>
-      </div>
-      <p style="margin-top:0.4rem">Through coaching, workshops, listening circles, and emotional wellbeing initiatives, she has supported individuals in gaining perspective, building confidence, and creating meaningful change in their lives and work.</p>
-      <div style="margin-top:1.1rem;text-align:center"><a class="btn btn-primary" href="about.html" style="align-items: center; gap: 8px; justify-content: center">Know More</a></div>
-    </div>
-  </section>
-
-  <!-- SUPPORTING FACILITATOR -->
-  <section class="section" style="background:#eef5f4">
-    <div class="wrap reveal">
-      <div class="facilitator-grid">
-        <img src="assets/kalki.jpg" alt="Kalki, Supporting Facilitator" class="kalki-photo facilitator-photo" style="width:200px;height:200px;border-radius:50%;object-fit:cover;border:4px solid var(--sage);box-shadow:var(--shadow-md)" />
-        <div>
-          <div class="eyebrow">Supporting Facilitator</div>
-          <h2>Kalki</h2>
-          <div class="rule"></div>
-          <p style="margin-top:0.3rem">Kalki is passionate about personal growth, self-exploration, and helping people discover new possibilities within themselves. Through his work facilitating workshops, retreats, and reflective spaces, he supports individuals in building greater awareness, courage, and connection with what matters most to them.</p>
-          <p style="margin-top:0.4rem">As co-facilitator, he will help hold the space, support participant reflections, and contribute to creating a thoughtful and well-supported experience throughout the workshop.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- REGISTER CTA -->
-  <section class="section band-navy cta-strip" id="register">
-    <div class="wrap reveal">
-      <div class="eyebrow" style="color:var(--sage)">25 &amp; 26 July 2026 · 6:30pm - 9:00 pm IST · Online via Zoom</div>
-      <h2>Reserve your place</h2>
-      <div class="rule" style="margin-left:auto;margin-right:auto"></div>
-      <p class="lead" style="margin-left:auto;margin-right:auto">Register through the form, or message us on WhatsApp and we'll guide you through it. <span id="price-note" style="opacity:0.75"></span></p>
-      <div class="btnrow">
-        <button class="btn btn-primary" onclick="openRegModal()">Register Now</button>
-        <a class="btn btn-ghost" href="https://wa.me/918080166955" target="_blank" rel="noopener">Ping on WhatsApp</a>
+      <div class="coming-soon-band">
+        <div class="cs-tag">Coming Soon</div>
+        <h2>Workshop for Working Professionals</h2>
+        <p>A new workshop designed specifically for working professionals navigating the demands of career, relationships, and personal growth. Dates to be announced soon.</p>
+        <a class="btn btn-primary" href="contact.html?from=workshop">Register my interest</a>
       </div>
     </div>
   </section>
@@ -280,7 +187,7 @@
           <ul>
             <li><a href="index.html">Home</a></li>
             <li><a href="about.html">About</a></li>
-            <li><a href="workshops.html">Upcoming Event</a></li>
+            <li><a href="workshops.html">Workshops</a></li>
             <li><a href="contact.html">Contact Us</a></li>
           </ul>
         </div>
@@ -298,172 +205,5 @@
   </footer>
 
   <script src="main.js"></script>
-
-  <!-- REGISTRATION MODAL -->
-  <div id="reg-modal" role="dialog" aria-modal="true" aria-labelledby="reg-title" onclick="handleBackdrop(event)">
-    <div class="reg-card">
-      <div class="reg-head">
-        <div class="eyebrow">Women's Reset &amp; Reconnection Workshop</div>
-        <h3 id="reg-title">Reserve Your Place</h3>
-        <div class="sub">25 &amp; 26 July 2026 · 6:30pm–9:00pm IST · Online via Zoom</div>
-        <div id="modal-price-banner" style="margin-top:0.35rem;font-size:0.78rem;color:rgba(255,255,255,0.6)"></div>
-        <button class="reg-close" onclick="closeRegModal()" aria-label="Close">&times;</button>
-      </div>
-
-      <!-- Form -->
-      <form id="reg-form" class="reg-body" action="https://formspree.io/f/mgojvkwl" method="POST">
-        <div class="rf-row">
-          <div class="rf">
-            <label>Full Name <span class="req">*</span></label>
-            <input type="text" name="full_name" placeholder="Your name" required />
-          </div>
-          <div class="rf">
-            <label>Contact No. <span class="req">*</span></label>
-            <input type="tel" name="contact" placeholder="+91 98765 43210" required />
-          </div>
-        </div>
-
-        <div class="rf">
-          <label>Email Address <span class="req">*</span></label>
-          <input type="email" name="email" placeholder="you@example.com" required />
-        </div>
-
-        <div class="rf">
-          <label>Age Group <span class="req">*</span></label>
-          <div class="rf-opts inline">
-            <label class="rf-opt"><input type="radio" name="age_group" value="Under 30" required /><span>Under 30</span></label>
-            <label class="rf-opt"><input type="radio" name="age_group" value="31–45" /><span>31–45</span></label>
-            <label class="rf-opt"><input type="radio" name="age_group" value="46–60" /><span>46–60</span></label>
-            <label class="rf-opt"><input type="radio" name="age_group" value="Above 60" /><span>Above 60</span></label>
-          </div>
-        </div>
-
-        <div class="rf">
-          <label>About You <span style="font-weight:400;text-transform:none;font-size:0.74rem">(select all that apply)</span></label>
-          <div class="rf-opts">
-            <label class="rf-opt"><input type="checkbox" name="about_you" value="Working professional" /><span>I'm a working professional</span></label>
-            <label class="rf-opt"><input type="checkbox" name="about_you" value="Homemaker / full-time parent" /><span>I'm a homemaker / full-time parent</span></label>
-            <label class="rf-opt"><input type="checkbox" name="about_you" value="Running my own business" /><span>I'm running my own business</span></label>
-            <label class="rf-opt"><input type="checkbox" name="about_you" value="Going through a life transition" /><span>I'm going through a life transition</span></label>
-            <label class="rf-opt"><input type="checkbox" name="about_you" value="Wearing multiple hats" /><span>I wear multiple hats - work, home, and more</span></label>
-          </div>
-        </div>
-
-        <div class="rf">
-          <label>What resonates most with you? <span class="req">*</span></label>
-          <div class="rf-opts">
-            <label class="rf-opt"><input type="radio" name="resonates" value="Feeling disconnected despite managing life" required /><span>I feel disconnected from myself despite managing life well on the outside</span></label>
-            <label class="rf-opt"><input type="radio" name="resonates" value="Wondering what I want for myself" /><span>I'm wondering - "what do I want for myself now?" after years of putting others first</span></label>
-            <label class="rf-opt"><input type="radio" name="resonates" value="Emotionally tired though life looks normal" /><span>I feel emotionally tired, even though life appears normal for others</span></label>
-            <label class="rf-opt"><input type="radio" name="resonates" value="At a crossroads, unsure of what comes next" /><span>I'm at a crossroads in life, unsure of what comes next</span></label>
-            <label class="rf-opt"><input type="radio" name="resonates" value="Want to feel like myself again" /><span>I want to feel like myself again - confident, capable, and connected</span></label>
-            <label class="rf-opt"><input type="radio" name="resonates" value="Need space for my own needs without guilt" /><span>I need to create space for my own needs without feeling guilty</span></label>
-            <label class="rf-opt"><input type="radio" name="resonates" value="Want to trust myself and my choices" /><span>I want to trust myself and my choices, even when life feels uncertain</span></label>
-            <label class="rf-opt"><input type="radio" name="resonates" value="Ready to pause, reflect and reconnect" /><span>I'm simply ready to pause, reflect, and reconnect with what matters</span></label>
-          </div>
-        </div>
-
-        <div class="rf">
-          <label>How did you find out about this workshop?</label>
-          <select name="referral">
-            <option value="">— Select —</option>
-            <option>Instagram / Social Media</option>
-            <option>WhatsApp message / broadcast</option>
-            <option>A friend or colleague</option>
-            <option>Let's Attune website</option>
-            <option>Other</option>
-          </select>
-        </div>
-
-        <div class="reg-divider"></div>
-
-        <button type="submit" class="reg-submit" id="reg-submit-btn">Submit Registration →</button>
-        <p style="font-size:0.72rem;color:#5a6b7a;text-align:center;margin-top:-0.6rem">Your details are safe with us. This is a confidential, no-recordings space.</p>
-      </form>
-
-      <!-- Thank You Screen -->
-      <div class="reg-thankyou" id="reg-thankyou">
-        <div style="font-size:2.2rem">🌿</div>
-        <h3>Thank you for blocking your spot!</h3>
-        <p>We're so excited to have you join us. See you at the workshop!</p>
-        <p style="margin-top:0.6rem">To confirm your place, please complete your payment using the QR code below. Once we receive your payment, we'll confirm your spot on WhatsApp within 24 hours.</p>
-        <div class="qr-wrap">
-          <div class="qr-label">Scan to pay via UPI</div>
-          <img src="assets/upi-qr.jpeg" alt="UPI QR Code" onerror="this.style.display='none';document.getElementById('upi-placeholder').style.display='flex'" />
-          <div id="upi-placeholder" style="display:none;width:160px;height:160px;background:#d8e3e1;border-radius:8px;align-items:center;justify-content:center;font-size:0.78rem;color:#5a6b7a;text-align:center;padding:1rem">[Your UPI QR here — add assets/upi-qr.png]</div>
-          <div class="qr-amount" id="modal-price">₹1,999</div>
-          <div class="qr-label">Once paid, your registration is confirmed.</div>
-        </div>
-        <p>Questions? <a href="https://wa.me/918080166955" target="_blank" style="color:#457b9d">Message us on WhatsApp →</a></p>
-        <div class="motto">EXPRESS · EXPLORE · EMPOWER · EVOLVE</div>
-        <button class="reg-close" onclick="closeRegModal()" style="position:static;background:var(--navy);width:auto;padding:0.5rem 1.4rem;border-radius:20px;font-size:0.82rem;margin-top:0.4rem">Close</button>
-      </div>
-
-    </div>
-  </div>
-
-  <script>
-    function openRegModal() {
-      document.getElementById('reg-modal').classList.add('open');
-      document.body.style.overflow = 'hidden';
-    }
-    function closeRegModal() {
-      document.getElementById('reg-modal').classList.remove('open');
-      document.body.style.overflow = '';
-    }
-    function handleBackdrop(e) {
-      if (e.target === document.getElementById('reg-modal')) closeRegModal();
-    }
-    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeRegModal(); });
-
-    // Dynamic pricing
-  (function() {
-    var earlyBirdDeadline = new Date('2026-07-14T23:59:59');
-    var now = new Date();
-    var price = now <= earlyBirdDeadline ? '₹1,999' : '₹2,999';
-    var isEarly = now <= earlyBirdDeadline;
-    var el = document.getElementById('modal-price');
-    if (el) el.textContent = price;
-    var banner = document.getElementById('modal-price-banner');
-    if (banner) banner.textContent = isEarly ? 'Early bird: ' + price + ' · Offer ends 14 July' : 'Workshop fee: ' + price;
-    var note = document.getElementById('price-note');
-    if (note) note.textContent = isEarly ? '(Early bird: ₹1,999 until 14 July, ₹2,999 thereafter)' : '(Workshop fee: ₹2,999)';
-  })();
-
-  document.getElementById('reg-form').addEventListener('submit', async function(e) {
-      e.preventDefault();
-      const btn = document.getElementById('reg-submit-btn');
-      btn.disabled = true;
-      btn.textContent = 'Sending…';
-      try {
-        const res = await fetch(this.action, {
-          method: 'POST',
-          body: new FormData(this),
-          headers: { 'Accept': 'application/json' }
-        });
-        if (res.ok) {
-          this.style.display = 'none';
-          document.getElementById('reg-thankyou').classList.add('show');
-        } else {
-          btn.disabled = false;
-          btn.textContent = 'Submit Registration →';
-          alert('Something went wrong. Please try again or message us on WhatsApp.');
-        }
-      } catch(err) {
-        btn.disabled = false;
-        btn.textContent = 'Submit Registration →';
-        alert('Could not connect. Please check your internet and try again.');
-      }
-    });
-  </script>
-
 </body>
 </html>
-
-<style id="__om-edit-overrides">
-:is(h1,h2,h3,h4,h5,h6,p,li,dt,dd,blockquote,figcaption,label,span,a,em,strong,small,td,th,caption) [data-start="1309"] { width: 7px !important }
-:is(h1,h2,h3,h4,h5,h6,p,li,dt,dd,blockquote,figcaption,label,span,a,em,strong,small,td,th,caption) [data-start="1309"] { width: 900px !important }
-:is(h1,h2,h3,h4,h5,h6,p,li,dt,dd,blockquote,figcaption,label,span,a,em,strong,small,td,th,caption) [data-start="1309"] { width: 7px !important }
-:is(h1,h2,h3,h4,h5,h6,p,li,dt,dd,blockquote,figcaption,label,span,a,em,strong,small,td,th,caption) [data-start="1309"] { width: 70px !important }
-:is(h1,h2,h3,h4,h5,h6,p,li,dt,dd,blockquote,figcaption,label,span,a,em,strong,small,td,th,caption) [data-start="1309"] { width: 76px !important }
-</style>

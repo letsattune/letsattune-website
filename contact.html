@@ -138,13 +138,6 @@
 </head>
 <body>
 
-  <!-- ANNOUNCEMENT BAR -->
-  <div class="announce">
-    <span class="announce-star">★</span>
-    <strong>Women's Reset and Reconnection Workshop</strong> starting soon... ·
-    <a href="workshops.html">Know more →</a>
-  </div>
-
   <!-- HEADER -->
   <header class="site-header">
     <div class="wrap">
@@ -156,11 +149,16 @@
       <nav class="nav">
         <a class="link" href="index.html">Home</a>
         <a class="link" href="about.html">About</a>
-        <a class="link" href="workshops.html">Upcoming Event</a>
+        <a class="link" href="workshops.html">Workshops</a>
         <a class="btn btn-primary active" href="contact.html">Contact Us</a>
       </nav>
     </div>
   </header>
+
+  <!-- Workshop interest banner (shown only when redirected from workshops page) -->
+  <div id="workshop-banner" style="display:none;background:#0e4f47;color:#fff;text-align:center;padding:0.75rem 1rem;font-size:0.88rem;line-height:1.5">
+    Interested in joining a workshop? Select <strong>"Workshop - Register my interest"</strong> below and tell us a little about yourself - we'll be in touch when the next one is ready.
+  </div>
 
   <!-- HERO -->
   <section class="contact-hero" style="padding: 48px 0px 4px">
@@ -206,7 +204,7 @@
               <label>What would you like to connect about? <span class="req">*</span></label>
               <select name="topic" required>
                 <option value="">— Select a topic —</option>
-                <option>The upcoming workshop</option>
+                <option>Workshop - Register my interest</option>
                 <option>1-on-1 coaching</option>
                 <option>Corporate / team workshops</option>
                 <option>Speaking engagement</option>
@@ -306,7 +304,7 @@
           <ul>
             <li><a href="index.html">Home</a></li>
             <li><a href="about.html">About</a></li>
-            <li><a href="workshops.html">Upcoming Event</a></li>
+            <li><a href="workshops.html">Workshops</a></li>
             <li><a href="contact.html">Contact Us</a></li>
           </ul>
         </div>
@@ -325,6 +323,13 @@
 
   <script src="main.js"></script>
   <script>
+    // Show workshop banner and pre-select topic if redirected from workshops page
+    if (new URLSearchParams(window.location.search).get('from') === 'workshop') {
+      document.getElementById('workshop-banner').style.display = 'block';
+      var topicSelect = document.querySelector('select[name="topic"]');
+      if (topicSelect) topicSelect.value = 'Workshop - Register my interest';
+    }
+
     document.getElementById('contact-form').addEventListener('submit', async function(e) {
       e.preventDefault();
       const btn = document.getElementById('cf-submit-btn');
