@@ -47,9 +47,12 @@
 
     .testimonials-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      grid-template-columns: 1fr 1fr;
       gap: 1.2rem;
       margin-top: 2rem;
+    }
+    @media (max-width: 600px) {
+      .testimonials-grid { grid-template-columns: 1fr; }
     }
     .tcard {
       background: #fff;
@@ -72,7 +75,8 @@
     }
 
     .coming-soon-band {
-      background: var(--navy);
+      background: #fdf0ed;
+      border: 1.5px solid #e63946;
       border-radius: 14px;
       padding: 2.4rem 2rem;
       text-align: center;
@@ -80,8 +84,8 @@
     }
     .coming-soon-band .cs-tag {
       display: inline-block;
-      background: rgba(171,201,201,0.18);
-      color: var(--sage);
+      background: #e63946;
+      color: #fff;
       font-size: 0.72rem;
       font-weight: 500;
       letter-spacing: 0.12em;
@@ -89,10 +93,9 @@
       padding: 4px 14px;
       border-radius: 20px;
       margin-bottom: 1rem;
-      border: 1px solid rgba(171,201,201,0.3);
     }
-    .coming-soon-band h2 { color: #fff; margin-bottom: 0.6rem; }
-    .coming-soon-band p { color: rgba(255,255,255,0.68); max-width: 44ch; margin: 0 auto 1.4rem; font-size: 0.95rem; line-height: 1.7; }
+    .coming-soon-band h2 { color: #1d3557; margin-bottom: 0.6rem; }
+    .coming-soon-band p { color: #5a6b7a; max-width: 44ch; margin: 0 auto 1.4rem; font-size: 0.95rem; line-height: 1.7; }
   </style>
 </head>
 <body>
@@ -125,7 +128,7 @@
 
   <!-- GROUP PHOTO -->
   <div>
-    <img class="wk-photo" src="assets/workshop-july-2026.jpg" alt="Participants of the Women's Reset and Reconnection Workshop, July 2026" />
+    <img class="wk-photo" src="assets/JulyWorkshop2026.jpg" alt="Participants of the Women's Reset and Reconnection Workshop, July 2026" />
     <p class="wk-photo-caption">Women's Reset and Reconnection Workshop · 25 & 26 July 2026 · Online via Zoom</p>
   </div>
 
