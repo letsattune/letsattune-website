@@ -321,6 +321,20 @@
   </footer>
 
   <script src="main.js"></script>
+  <script>
+    function openRegModal() {
+      document.getElementById('reg-modal').classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+    function closeRegModal() {
+      document.getElementById('reg-modal').classList.remove('open');
+      document.body.style.overflow = '';
+    }
+    function handleBackdrop(e) {
+      if (e.target === document.getElementById('reg-modal')) closeRegModal();
+    }
+    document.addEventListener('keydown', function(e) { if (e.key === 'Escape') closeRegModal(); });
+  </script>
 
   <!-- REGISTRATION MODAL -->
   <div id="reg-modal" role="dialog" aria-modal="true" aria-labelledby="reg-title" onclick="handleBackdrop(event)">
@@ -392,19 +406,6 @@
   </div>
 
   <script>
-    function openRegModal() {
-      document.getElementById('reg-modal').classList.add('open');
-      document.body.style.overflow = 'hidden';
-    }
-    function closeRegModal() {
-      document.getElementById('reg-modal').classList.remove('open');
-      document.body.style.overflow = '';
-    }
-    function handleBackdrop(e) {
-      if (e.target === document.getElementById('reg-modal')) closeRegModal();
-    }
-    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeRegModal(); });
-
     document.getElementById('reg-form').addEventListener('submit', async function(e) {
       e.preventDefault();
       const btn = document.getElementById('reg-submit-btn');
