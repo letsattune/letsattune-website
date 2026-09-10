@@ -4,195 +4,116 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Workshops | Let's Attune</title>
-  <meta name="description" content="Workshops by Let's Attune — structured group experiences designed for growth, awareness, and reconnection. Join the Women's Reset and Reconnection Workshop, 26 & 27 September 2026." />
-  <meta property="og:type" content="website" />
-  <meta property="og:title" content="Workshops — Let's Attune" />
-  <meta property="og:description" content="Join the Women's Reset and Reconnection Workshop, 26 & 27 September 2026, with PCC coach Shilpa Jahagirdar." />
-  <meta property="og:image" content="assets/shilpa-full.jpg" />
-  <meta property="og:url" content="https://letsattune.com/workshops.html" />
-  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="description" content="Join the Women's Reset and Reconnection Workshop, 26 & 27 September 2026, with PCC coach Shilpa Jahagirdar." />
   <link rel="icon" type="image/png" href="assets/Lets Attune logo.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,WONK@0,9..144,500,0;0,9..144,600,0;0,9..144,700,0;1,9..144,500,0;1,9..144,600,0&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
-  <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-HD6TJQ2L2W"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-HD6TJQ2L2W');
-  </script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-HD6TJQ2L2W');</script>
 
   <style>
-    /* ── UPCOMING WORKSHOP COVER ─────────────────────────── */
-    .wk-cover {
-      background: var(--navy);
-      padding: clamp(3rem, 8vw, 5rem) 0 clamp(2.5rem, 6vw, 4rem);
-      text-align: center;
-    }
-    .wk-cover .eyebrow { color: var(--sage); }
+    /* COVER */
+    .wk-cover { background: #1d3557; padding: 4rem 0 3.5rem; text-align: center; }
+    .wk-cover .eyebrow { color: #abc9c9; }
     .wk-cover h1 { color: #fff; margin: 0.4rem auto 0; max-width: 24ch; }
-    .wk-cover p { color: rgba(255,255,255,0.68); max-width: 46ch; margin: 0.8rem auto 0; font-size: 0.95rem; line-height: 1.7; }
-    .wk-facts {
-      display: flex; flex-wrap: wrap; gap: 0.6rem;
-      justify-content: center; margin: 1.4rem auto 0;
-    }
-    .fact {
-      background: rgba(255,255,255,0.1);
-      color: rgba(255,255,255,0.85);
-      font-size: 0.85rem;
-      padding: 0.4rem 1rem;
-      border-radius: 20px;
-      border: 1px solid rgba(255,255,255,0.2);
-    }
+    .wk-cover p { color: rgba(255,255,255,0.7); max-width: 46ch; margin: 0.8rem auto 0; font-size: 0.95rem; line-height: 1.7; }
+    .wk-facts { display: flex; flex-wrap: wrap; gap: 0.6rem; justify-content: center; margin: 1.4rem auto 0; }
+    .fact { background: rgba(255,255,255,0.1); color: rgba(255,255,255,0.85); font-size: 0.85rem; padding: 0.4rem 1rem; border-radius: 20px; border: 1px solid rgba(255,255,255,0.2); }
+    .wk-cover .btnrow { justify-content: center; margin-top: 2rem; }
+    .wk-cover .btn-ghost { color: #fff !important; border-color: rgba(255,255,255,0.7) !important; }
 
-    /* ── REGISTRATION MODAL ─────────────────────────────── */
-    #reg-modal {
-      display: none; position: fixed; inset: 0; z-index: 1000;
-      background: rgba(29,53,87,0.55); backdrop-filter: blur(3px);
-      align-items: flex-start; justify-content: center;
-      overflow-y: auto; padding: 2rem 1rem 3rem;
-    }
-    #reg-modal.open { display: flex; }
-    .reg-card {
-      background: #fff; border-radius: 14px;
-      box-shadow: 0 24px 60px rgba(29,53,87,0.18);
-      width: 100%; max-width: 560px;
-      overflow: hidden; position: relative; margin: auto;
-    }
-    .reg-head {
-      background: var(--navy); padding: 1.8rem 2rem 1.5rem;
-      text-align: center; position: relative;
-    }
-    .reg-head .eyebrow { color: var(--sage); font-size: 0.78rem; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 0.3rem; }
-    .reg-head h3 { font-family: var(--ff-serif); color: #fff; font-size: 1.4rem; font-weight: 600; line-height: 1.25; }
-    .reg-head .sub { color: rgba(255,255,255,0.65); font-size: 0.8rem; margin-top: 0.35rem; }
-    .reg-close {
-      position: absolute; top: 1rem; right: 1rem;
-      background: rgba(255,255,255,0.12); border: none; color: #fff;
-      width: 32px; height: 32px; border-radius: 50%; font-size: 1.1rem;
-      cursor: pointer; display: flex; align-items: center; justify-content: center;
-      transition: background 0.2s;
-    }
-    .reg-close:hover { background: rgba(255,255,255,0.25); }
-    .reg-body { padding: 1.8rem 2rem 2rem; display: flex; flex-direction: column; gap: 1.2rem; }
-    .rf { display: flex; flex-direction: column; gap: 0.32rem; }
-    .rf label { font-size: 0.78rem; font-weight: 500; color: #5a6b7a; letter-spacing: 0.03em; text-transform: uppercase; }
-    .rf label .req { color: var(--coral); }
-    .rf input, .rf select, .rf textarea {
-      font-family: var(--ff-sans); font-size: 0.92rem; color: var(--navy);
-      background: #f3f7f6; border: 1.5px solid #d8e3e1; border-radius: 6px;
-      padding: 0.6rem 0.85rem; outline: none; width: 100%;
-      transition: border-color 0.2s, box-shadow 0.2s;
-    }
-    .rf input:focus, .rf select:focus { border-color: #457b9d; background: #fff; box-shadow: 0 0 0 3px rgba(69,123,157,0.1); }
-    .rf-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
-    .reg-divider { height: 1px; background: #d8e3e1; }
-    .reg-submit {
-      font-family: var(--ff-sans); font-size: 0.95rem; font-weight: 600;
-      background: var(--coral); color: #fff; border: none;
-      border-radius: 30px; padding: 0.75rem 2rem; cursor: pointer;
-      transition: opacity 0.2s, transform 0.1s; width: 100%; margin-top: 0.4rem;
-    }
-    .reg-submit:hover { opacity: 0.88; }
-    .reg-submit:active { transform: scale(0.98); }
-    .reg-submit:disabled { opacity: 0.5; cursor: not-allowed; }
+    /* PAST WORKSHOP DIVIDER */
+    .past-divider { background: #f3f7f6; border-top: 3px solid #abc9c9; padding: 2.5rem 0 2rem; text-align: center; }
+    .past-divider .eyebrow { color: #457b9d; }
+    .past-divider h2 { color: #1d3557; margin: 0.4rem auto 0; }
+    .past-divider p { color: #5a6b7a; max-width: 46ch; margin: 0.6rem auto 0; font-size: 0.9rem; line-height: 1.7; }
 
-    /* Thank you screen */
-    .reg-thankyou {
-      display: none; flex-direction: column; align-items: center;
-      text-align: center; gap: 1rem; padding: 2.4rem 2rem 2.8rem;
-    }
-    .reg-thankyou.show { display: flex; }
-    .reg-thankyou h3 { font-family: var(--ff-serif); font-size: 1.4rem; color: var(--navy); }
-    .reg-thankyou p { font-size: 0.88rem; color: #5a6b7a; max-width: 360px; line-height: 1.65; }
-    .reg-thankyou .qr-wrap {
-      background: #f3f7f6; border-radius: 10px; padding: 1.2rem 1.4rem;
-      display: flex; flex-direction: column; align-items: center; gap: 0.6rem;
-    }
-    .reg-thankyou .qr-wrap img { width: 160px; height: 160px; object-fit: contain; }
-    .reg-thankyou .qr-label { font-size: 0.78rem; color: #5a6b7a; }
-    .reg-thankyou .qr-amount { font-size: 1rem; font-weight: 600; color: var(--coral); }
-    .reg-thankyou .motto { font-family: var(--ff-serif); font-style: italic; color: #457b9d; font-size: 0.9rem; margin-top: 0.4rem; }
+    /* PHOTO ROW */
+    .photo-row { display: grid; grid-template-columns: 320px 1fr; gap: 2rem; align-items: center; background: #dbe8e6; border-radius: 12px; padding: 1.5rem; max-width: 860px; margin: 0 auto; }
+    .photo-row img { width: 100%; border-radius: 10px; object-fit: contain; display: block; }
+    .photo-text .eyebrow { color: #457b9d; margin-bottom: 0.5rem; }
+    .photo-text blockquote { font-family: var(--ff-serif); font-style: italic; font-size: 1rem; color: #1d3557; line-height: 1.75; margin: 0 0 0.6rem; }
+    .photo-text cite { font-size: 0.82rem; color: #7a8b96; font-style: normal; }
+    @media (max-width: 640px) { .photo-row { grid-template-columns: 1fr; } }
 
-    /* ── PAST WORKSHOP ───────────────────────────────────── */
-    .wk-past-header {
-      background: #f3f7f6;
-      padding: clamp(2rem, 5vw, 3rem) 0 clamp(1.5rem, 4vw, 2.5rem);
-      text-align: center;
-      border-top: 3px solid var(--sage);
-    }
-    .wk-past-header .eyebrow { color: var(--steel); }
-    .wk-past-header h2 { color: var(--navy); margin: 0.4rem auto 0; }
-    .wk-past-header p { color: #5a6b7a; max-width: 46ch; margin: 0.6rem auto 0; font-size: 0.9rem; line-height: 1.7; }
+    /* TESTIMONIALS */
+    .t-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem; margin-top: 2rem; }
+    @media (max-width: 600px) { .t-grid { grid-template-columns: 1fr; } }
+    .tcard { background: #fff; border-radius: 10px; border-left: 4px solid #e63946; padding: 1.3rem 1.4rem; box-shadow: 0 4px 16px rgba(29,53,87,0.07); }
+    .tcard p { font-size: 0.92rem; color: #1d3557; font-style: italic; line-height: 1.65; margin: 0 0 0.5rem; }
+    .tcard span { font-size: 0.76rem; color: #7a8b96; }
 
-    .wk-photo-row {
-      display: grid;
-      grid-template-columns: 320px 1fr;
-      gap: 2rem;
-      align-items: center;
-      background: #dbe8e6;
-      border-radius: 12px;
-      overflow: hidden;
-      padding: 1.5rem;
-      margin: 0 auto;
-      max-width: 860px;
+    /* MODAL OVERLAY */
+    .modal-overlay {
+      display: none;
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      z-index: 2000;
+      background: rgba(29,53,87,0.6);
+      overflow-y: auto;
+      padding: 2rem 1rem 3rem;
     }
-    .wk-photo-row img {
-      width: 100%;
-      border-radius: 10px;
-      object-fit: contain;
-    }
-    .wk-photo-caption-block .eyebrow { color: var(--steel); margin-bottom: 0.5rem; }
-    .wk-photo-caption-block p {
-      font-family: var(--ff-serif);
-      font-style: italic;
-      font-size: 1rem;
-      color: var(--navy);
-      line-height: 1.75;
-      margin: 0 0 0.6rem;
-    }
-    .wk-photo-caption-block .attr { font-size: 0.82rem; color: var(--muted); font-style: normal; font-family: var(--ff-sans); }
-    @media (max-width: 640px) {
-      .wk-photo-row { grid-template-columns: 1fr; }
-      .rf-row { grid-template-columns: 1fr; }
-    }
+    .modal-overlay.is-open { display: block; }
 
-    .testimonials-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 1.2rem;
-      margin-top: 2rem;
-    }
-    @media (max-width: 600px) {
-      .testimonials-grid { grid-template-columns: 1fr; }
-    }
-    .tcard {
+    /* MODAL CARD */
+    .modal-card {
       background: #fff;
-      border-radius: 10px;
-      border-left: 4px solid var(--coral);
-      padding: 1.3rem 1.4rem;
-      box-shadow: 0 4px 16px rgba(29,53,87,0.07);
+      border-radius: 14px;
+      box-shadow: 0 24px 60px rgba(0,0,0,0.2);
+      width: 100%;
+      max-width: 540px;
+      margin: 0 auto;
+      overflow: hidden;
     }
-    .tcard p {
-      font-size: 0.92rem;
-      color: var(--navy);
-      font-style: italic;
-      line-height: 1.65;
-      margin: 0 0 0.6rem;
+    .modal-head { background: #1d3557; padding: 1.8rem 2rem 1.5rem; text-align: center; position: relative; }
+    .modal-head .eyebrow { color: #abc9c9; font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 0.3rem; }
+    .modal-head h3 { font-family: var(--ff-serif); color: #fff; font-size: 1.4rem; font-weight: 600; line-height: 1.25; margin: 0; }
+    .modal-head p { color: rgba(255,255,255,0.6); font-size: 0.8rem; margin: 0.4rem 0 0; }
+    .modal-close-btn {
+      position: absolute; top: 1rem; right: 1rem;
+      background: rgba(255,255,255,0.15); border: none; color: #fff;
+      width: 32px; height: 32px; border-radius: 50%;
+      font-size: 1.2rem; cursor: pointer; line-height: 32px; text-align: center;
     }
-    .tcard .tattr {
-      font-size: 0.76rem;
-      color: var(--muted);
-      font-style: normal;
+    .modal-close-btn:hover { background: rgba(255,255,255,0.3); }
+    .modal-body { padding: 1.8rem 2rem 2rem; }
+    .modal-body form { display: flex; flex-direction: column; gap: 1.1rem; }
+    .field { display: flex; flex-direction: column; gap: 0.3rem; }
+    .field label { font-size: 0.75rem; font-weight: 500; color: #5a6b7a; text-transform: uppercase; letter-spacing: 0.04em; }
+    .field label .req { color: #e63946; }
+    .field input, .field select {
+      font-family: var(--ff-sans); font-size: 0.91rem; color: #1d3557;
+      background: #f3f7f6; border: 1.5px solid #d0dbd8; border-radius: 6px;
+      padding: 0.62rem 0.85rem; width: 100%; outline: none;
+      transition: border-color 0.2s;
     }
+    .field input:focus, .field select:focus { border-color: #457b9d; background: #fff; }
+    .field-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+    @media (max-width: 480px) { .field-row { grid-template-columns: 1fr; } }
+    .divider { height: 1px; background: #d0dbd8; margin: 0.4rem 0; }
+    .submit-btn {
+      background: #e63946; color: #fff; border: none;
+      border-radius: 30px; padding: 0.8rem 2rem;
+      font-family: var(--ff-sans); font-size: 0.95rem; font-weight: 600;
+      cursor: pointer; width: 100%; transition: opacity 0.2s;
+    }
+    .submit-btn:hover { opacity: 0.88; }
+    .submit-btn:disabled { opacity: 0.5; cursor: not-allowed; }
+    .privacy-note { font-size: 0.71rem; color: #7a8b96; text-align: center; }
 
-    @media (max-width: 480px) {
-      .reg-body { padding: 1.4rem 1.2rem 1.8rem; }
-      .reg-head { padding: 1.5rem 1.2rem 1.2rem; }
-    }
+    /* THANK YOU */
+    .modal-thankyou { display: none; flex-direction: column; align-items: center; text-align: center; padding: 2.4rem 2rem 2.8rem; gap: 0.9rem; }
+    .modal-thankyou.show { display: flex; }
+    .modal-thankyou h3 { font-family: var(--ff-serif); font-size: 1.4rem; color: #1d3557; margin: 0; }
+    .modal-thankyou p { font-size: 0.88rem; color: #5a6b7a; max-width: 340px; line-height: 1.65; margin: 0; }
+    .qr-box { background: #f3f7f6; border-radius: 10px; padding: 1.2rem 1.4rem; display: flex; flex-direction: column; align-items: center; gap: 0.5rem; }
+    .qr-box img { width: 160px; height: 160px; object-fit: contain; }
+    .qr-box .amount { font-size: 1.05rem; font-weight: 600; color: #e63946; }
+    .qr-box .note { font-size: 0.76rem; color: #7a8b96; }
+    .modal-motto { font-family: var(--ff-serif); font-style: italic; color: #457b9d; font-size: 0.88rem; }
+    .close-link { font-size: 0.82rem; color: #457b9d; cursor: pointer; text-decoration: underline; }
   </style>
 </head>
 <body>
@@ -214,7 +135,7 @@
     </div>
   </header>
 
-  <!-- UPCOMING WORKSHOP COVER -->
+  <!-- UPCOMING WORKSHOP -->
   <section class="wk-cover">
     <div class="wrap">
       <div class="eyebrow">Upcoming Workshop</div>
@@ -227,15 +148,15 @@
         <span class="fact">💻 Online via Zoom</span>
         <span class="fact">💰 ₹3,500</span>
       </div>
-      <div class="btnrow" style="justify-content:center;margin-top:1.8rem">
-        <button class="btn btn-primary" onclick="openRegModal()" style="min-height:46px;">Register Now</button>
-        <a class="btn btn-ghost" href="https://wa.me/918080166955" target="_blank" rel="noopener" style="color:#fff;border-color:rgba(255,255,255,0.8);">Ask a Question</a>
+      <div class="btnrow">
+        <button class="btn btn-primary" id="open-modal-btn" style="min-height:46px">Register Now</button>
+        <a class="btn btn-ghost" href="https://wa.me/918080166955" target="_blank" rel="noopener" style="color:#fff;border-color:rgba(255,255,255,0.7)">Ask a Question</a>
       </div>
     </div>
   </section>
 
-  <!-- PAST WORKSHOP HEADER -->
-  <div class="wk-past-header">
+  <!-- PAST WORKSHOP DIVIDER -->
+  <div class="past-divider">
     <div class="wrap">
       <div class="eyebrow">Past Workshop · July 2026</div>
       <h2>Here's what happened last time</h2>
@@ -243,15 +164,15 @@
     </div>
   </div>
 
-  <!-- GROUP PHOTO -->
+  <!-- PHOTO + QUOTE -->
   <section class="section band-white">
     <div class="wrap">
-      <div class="wk-photo-row reveal">
-        <img src="assets/JulyWorkshop2026LW.jpg" alt="Participants of the Women's Reset and Reconnection Workshop, July 2026" />
-        <div class="wk-photo-caption-block">
+      <div class="photo-row reveal">
+        <img src="assets/JulyWorkshop2026LW.jpg" alt="Workshop group photo, July 2026" />
+        <div class="photo-text">
           <div class="eyebrow">July 2026 · Online via Zoom</div>
-          <p>"It was such a warm experience. I am truly grateful to everyone who was part of this journey - their stories, their hopes, and what they are looking for ahead. It reminded me, once again, that we are all so capable. Sometimes all we need is a little light to see it."</p>
-          <span class="attr">- Shilpa</span>
+          <blockquote>"It was such a warm experience. I am truly grateful to everyone who was part of this journey - their stories, their hopes, and what they are looking for ahead. It reminded me, once again, that we are all so capable. Sometimes all we need is a little light to see it."</blockquote>
+          <cite>- Shilpa</cite>
         </div>
       </div>
     </div>
@@ -263,28 +184,26 @@
       <h2>What participants shared</h2>
       <div class="rule"></div>
       <p style="max-width:60ch">It was a privilege to hold this space. Here is what some of the women who attended had to say:</p>
-
-      <div class="testimonials-grid">
-        <div class="tcard reveal">
+      <div class="t-grid">
+        <div class="tcard">
           <p>"This workshop was awakening."</p>
-          <span class="tattr">- Participant</span>
+          <span>- Participant</span>
         </div>
-        <div class="tcard reveal">
+        <div class="tcard">
           <p>"I don't want this to end... it felt so good to speak out."</p>
-          <span class="tattr">- Participant</span>
+          <span>- Participant</span>
         </div>
-        <div class="tcard reveal">
+        <div class="tcard">
           <p>"Both sessions helped me slow down and think about things I had not paid attention to."</p>
-          <span class="tattr">- Participant</span>
+          <span>- Participant</span>
         </div>
-        <div class="tcard reveal">
+        <div class="tcard">
           <p>"Great session. Let's stay connected and support each other."</p>
-          <span class="tattr">- Participant</span>
+          <span>- Participant</span>
         </div>
       </div>
-
-      <div style="text-align:center;margin-top:2.4rem">
-        <button class="btn btn-primary" onclick="openRegModal()">Join us in September →</button>
+      <div style="text-align:center;margin-top:2rem">
+        <button class="btn btn-primary" id="open-modal-btn-2">Join us in September</button>
       </div>
     </div>
   </section>
@@ -320,106 +239,102 @@
     </div>
   </footer>
 
-  <script src="main.js"></script>
-  <script>
-    function openRegModal() {
-      document.getElementById('reg-modal').classList.add('open');
-      document.body.style.overflow = 'hidden';
-    }
-    function closeRegModal() {
-      document.getElementById('reg-modal').classList.remove('open');
-      document.body.style.overflow = '';
-    }
-    function handleBackdrop(e) {
-      if (e.target === document.getElementById('reg-modal')) closeRegModal();
-    }
-    document.addEventListener('keydown', function(e) { if (e.key === 'Escape') closeRegModal(); });
-  </script>
-
   <!-- REGISTRATION MODAL -->
-  <div id="reg-modal" role="dialog" aria-modal="true" aria-labelledby="reg-title" onclick="handleBackdrop(event)">
-    <div class="reg-card">
-      <div class="reg-head">
-        <div class="eyebrow">Women's Reset & Reconnection Workshop</div>
-        <h3 id="reg-title">Reserve Your Place</h3>
-        <div class="sub">26 & 27 September 2026 · 2:30pm–5:00pm IST · Online via Zoom</div>
-        <div style="margin-top:0.35rem;font-size:0.78rem;color:rgba(255,255,255,0.6)">Workshop fee: ₹3,500</div>
-        <button class="reg-close" onclick="closeRegModal()" aria-label="Close">&times;</button>
+  <div class="modal-overlay" id="reg-modal">
+    <div class="modal-card">
+
+      <div class="modal-head">
+        <div class="eyebrow">Women's Reset & Reconnection</div>
+        <h3>Reserve Your Place</h3>
+        <p>26 & 27 September 2026 · 2:30pm–5:00pm IST · Online via Zoom · ₹3,500</p>
+        <button class="modal-close-btn" id="close-modal-btn" aria-label="Close">&times;</button>
       </div>
 
-      <!-- Form -->
-      <form id="reg-form" class="reg-body" action="https://formspree.io/f/mgojvkwl" method="POST">
-        <input type="hidden" name="_subject" value="New Workshop Registration — Sept 2026" />
-        <div class="rf-row">
-          <div class="rf">
-            <label>Full Name <span class="req">*</span></label>
-            <input type="text" name="full_name" placeholder="Your name" required />
+      <div class="modal-body">
+        <form id="reg-form" action="https://formspree.io/f/mgojvkwl" method="POST">
+          <input type="hidden" name="_subject" value="Workshop Registration — Sept 2026" />
+
+          <div class="field-row">
+            <div class="field">
+              <label>Full Name <span class="req">*</span></label>
+              <input type="text" name="full_name" placeholder="Your name" required />
+            </div>
+            <div class="field">
+              <label>Contact No. <span class="req">*</span></label>
+              <input type="tel" name="contact" placeholder="+91 98765 43210" required />
+            </div>
           </div>
-          <div class="rf">
-            <label>Contact No. <span class="req">*</span></label>
-            <input type="tel" name="contact" placeholder="+91 98765 43210" required />
+
+          <div class="field">
+            <label>Email Address <span class="req">*</span></label>
+            <input type="email" name="email" placeholder="you@example.com" required />
           </div>
+
+          <div class="field">
+            <label>How did you hear about this?</label>
+            <select name="referral">
+              <option value="">— Select —</option>
+              <option>Instagram / Social Media</option>
+              <option>WhatsApp message / broadcast</option>
+              <option>A friend or colleague</option>
+              <option>Let's Attune website</option>
+              <option>Attended the July workshop</option>
+              <option>Other</option>
+            </select>
+          </div>
+
+          <div class="divider"></div>
+          <button type="submit" class="submit-btn" id="submit-btn">Submit Registration →</button>
+          <p class="privacy-note">Your details are safe with us. This is a confidential, no-recordings space.</p>
+        </form>
+
+        <div class="modal-thankyou" id="reg-thankyou">
+          <div style="font-size:2.2rem">🌿</div>
+          <h3>Thank you for blocking your spot!</h3>
+          <p>We're so excited to have you join us. See you at the workshop!</p>
+          <p>To confirm your place, please pay using the QR code below. Once we receive your payment, we'll confirm your spot on WhatsApp within 24 hours.</p>
+          <div class="qr-box">
+            <div class="note">Scan to pay via UPI</div>
+            <img src="assets/upi-qr.jpeg" alt="UPI QR Code" />
+            <div class="amount">₹3,500</div>
+            <div class="note">Once paid, your registration is confirmed.</div>
+          </div>
+          <p>Questions? <a href="https://wa.me/918080166955" target="_blank" style="color:#457b9d">Message us on WhatsApp →</a></p>
+          <div class="modal-motto">EXPRESS · EXPLORE · EMPOWER · EVOLVE</div>
+          <span class="close-link" id="close-modal-link">Close</span>
         </div>
-
-        <div class="rf">
-          <label>Email Address <span class="req">*</span></label>
-          <input type="email" name="email" placeholder="you@example.com" required />
-        </div>
-
-        <div class="rf">
-          <label>How did you find out about this workshop?</label>
-          <select name="referral">
-            <option value="">— Select —</option>
-            <option>Instagram / Social Media</option>
-            <option>WhatsApp message / broadcast</option>
-            <option>A friend or colleague</option>
-            <option>Let's Attune website</option>
-            <option>Attended the July workshop</option>
-            <option>Other</option>
-          </select>
-        </div>
-
-        <div class="reg-divider"></div>
-
-        <button type="submit" class="reg-submit" id="reg-submit-btn">Submit Registration →</button>
-        <p style="font-size:0.72rem;color:#5a6b7a;text-align:center;margin-top:-0.6rem">Your details are safe with us. This is a confidential, no-recordings space.</p>
-      </form>
-
-      <!-- Thank You Screen -->
-      <div class="reg-thankyou" id="reg-thankyou">
-        <div style="font-size:2.2rem">🌿</div>
-        <h3>Thank you for blocking your spot!</h3>
-        <p>We're so excited to have you join us. See you at the workshop!</p>
-        <p style="margin-top:0.6rem">To confirm your place, please complete your payment using the QR code below. Once we receive your payment, we'll confirm your spot on WhatsApp within 24 hours.</p>
-        <div class="qr-wrap">
-          <div class="qr-label">Scan to pay via UPI</div>
-          <img src="assets/upi-qr.jpeg" alt="UPI QR Code" onerror="this.style.display='none'" />
-          <div class="qr-amount">₹3,500</div>
-          <div class="qr-label">Once paid, your registration is confirmed.</div>
-        </div>
-        <p>Questions? <a href="https://wa.me/918080166955" target="_blank" style="color:#457b9d">Message us on WhatsApp →</a></p>
-        <div class="motto">EXPRESS · EXPLORE · EMPOWER · EVOLVE</div>
-        <button class="reg-close" onclick="closeRegModal()" style="position:static;background:var(--navy);width:auto;padding:0.5rem 1.4rem;border-radius:20px;font-size:0.82rem;margin-top:0.4rem">Close</button>
       </div>
 
     </div>
   </div>
 
+  <script src="main.js"></script>
   <script>
-    document.getElementById('reg-form').addEventListener('submit', async function(e) {
+    var modal = document.getElementById('reg-modal');
+    var form = document.getElementById('reg-form');
+    var thankyou = document.getElementById('reg-thankyou');
+
+    function openModal() { modal.classList.add('is-open'); document.body.style.overflow = 'hidden'; }
+    function closeModal() { modal.classList.remove('is-open'); document.body.style.overflow = ''; }
+
+    document.getElementById('open-modal-btn').addEventListener('click', openModal);
+    document.getElementById('open-modal-btn-2').addEventListener('click', openModal);
+    document.getElementById('close-modal-btn').addEventListener('click', closeModal);
+    document.getElementById('close-modal-link').addEventListener('click', closeModal);
+
+    modal.addEventListener('click', function(e) { if (e.target === modal) closeModal(); });
+    document.addEventListener('keydown', function(e) { if (e.key === 'Escape') closeModal(); });
+
+    form.addEventListener('submit', async function(e) {
       e.preventDefault();
-      const btn = document.getElementById('reg-submit-btn');
+      var btn = document.getElementById('submit-btn');
       btn.disabled = true;
       btn.textContent = 'Sending…';
       try {
-        const res = await fetch(this.action, {
-          method: 'POST',
-          body: new FormData(this),
-          headers: { 'Accept': 'application/json' }
-        });
+        var res = await fetch(form.action, { method: 'POST', body: new FormData(form), headers: { 'Accept': 'application/json' } });
         if (res.ok) {
-          this.style.display = 'none';
-          document.getElementById('reg-thankyou').classList.add('show');
+          form.style.display = 'none';
+          thankyou.classList.add('show');
         } else {
           btn.disabled = false;
           btn.textContent = 'Submit Registration →';
