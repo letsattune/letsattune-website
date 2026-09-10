@@ -4,10 +4,10 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Workshops | Let's Attune</title>
-  <meta name="description" content="Workshops by Let's Attune — structured group experiences designed for growth, awareness, and reconnection. See what we've run and what's coming next." />
+  <meta name="description" content="Workshops by Let's Attune — structured group experiences designed for growth, awareness, and reconnection. Join the Women's Reset and Reconnection Workshop, 26 & 27 September 2026." />
   <meta property="og:type" content="website" />
   <meta property="og:title" content="Workshops — Let's Attune" />
-  <meta property="og:description" content="Past workshops and upcoming events by Let's Attune with PCC coach Shilpa Jahagirdar." />
+  <meta property="og:description" content="Join the Women's Reset and Reconnection Workshop, 26 & 27 September 2026, with PCC coach Shilpa Jahagirdar." />
   <meta property="og:image" content="assets/shilpa-full.jpg" />
   <meta property="og:url" content="https://letsattune.com/workshops.html" />
   <meta name="twitter:card" content="summary_large_image" />
@@ -26,14 +26,107 @@
   </script>
 
   <style>
-    .wk-past-hero {
+    /* ── UPCOMING WORKSHOP COVER ─────────────────────────── */
+    .wk-cover {
       background: var(--navy);
-      padding: clamp(3rem, 8vw, 5rem) 0 clamp(2rem, 5vw, 3.5rem);
+      padding: clamp(3rem, 8vw, 5rem) 0 clamp(2.5rem, 6vw, 4rem);
       text-align: center;
     }
-    .wk-past-hero .eyebrow { color: var(--sage); }
-    .wk-past-hero h1 { color: #fff; margin: 0.4rem auto 0; max-width: 24ch; }
-    .wk-past-hero p { color: rgba(255,255,255,0.68); max-width: 46ch; margin: 0.8rem auto 0; font-size: 0.95rem; line-height: 1.7; }
+    .wk-cover .eyebrow { color: var(--sage); }
+    .wk-cover h1 { color: #fff; margin: 0.4rem auto 0; max-width: 24ch; }
+    .wk-cover p { color: rgba(255,255,255,0.68); max-width: 46ch; margin: 0.8rem auto 0; font-size: 0.95rem; line-height: 1.7; }
+    .wk-facts {
+      display: flex; flex-wrap: wrap; gap: 0.6rem;
+      justify-content: center; margin: 1.4rem auto 0;
+    }
+    .fact {
+      background: rgba(255,255,255,0.1);
+      color: rgba(255,255,255,0.85);
+      font-size: 0.85rem;
+      padding: 0.4rem 1rem;
+      border-radius: 20px;
+      border: 1px solid rgba(255,255,255,0.2);
+    }
+
+    /* ── REGISTRATION MODAL ─────────────────────────────── */
+    #reg-modal {
+      display: none; position: fixed; inset: 0; z-index: 1000;
+      background: rgba(29,53,87,0.55); backdrop-filter: blur(3px);
+      align-items: flex-start; justify-content: center;
+      overflow-y: auto; padding: 2rem 1rem 3rem;
+    }
+    #reg-modal.open { display: flex; }
+    .reg-card {
+      background: #fff; border-radius: 14px;
+      box-shadow: 0 24px 60px rgba(29,53,87,0.18);
+      width: 100%; max-width: 560px;
+      overflow: hidden; position: relative; margin: auto;
+    }
+    .reg-head {
+      background: var(--navy); padding: 1.8rem 2rem 1.5rem;
+      text-align: center; position: relative;
+    }
+    .reg-head .eyebrow { color: var(--sage); font-size: 0.78rem; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 0.3rem; }
+    .reg-head h3 { font-family: var(--ff-serif); color: #fff; font-size: 1.4rem; font-weight: 600; line-height: 1.25; }
+    .reg-head .sub { color: rgba(255,255,255,0.65); font-size: 0.8rem; margin-top: 0.35rem; }
+    .reg-close {
+      position: absolute; top: 1rem; right: 1rem;
+      background: rgba(255,255,255,0.12); border: none; color: #fff;
+      width: 32px; height: 32px; border-radius: 50%; font-size: 1.1rem;
+      cursor: pointer; display: flex; align-items: center; justify-content: center;
+      transition: background 0.2s;
+    }
+    .reg-close:hover { background: rgba(255,255,255,0.25); }
+    .reg-body { padding: 1.8rem 2rem 2rem; display: flex; flex-direction: column; gap: 1.2rem; }
+    .rf { display: flex; flex-direction: column; gap: 0.32rem; }
+    .rf label { font-size: 0.78rem; font-weight: 500; color: #5a6b7a; letter-spacing: 0.03em; text-transform: uppercase; }
+    .rf label .req { color: var(--coral); }
+    .rf input, .rf select, .rf textarea {
+      font-family: var(--ff-sans); font-size: 0.92rem; color: var(--navy);
+      background: #f3f7f6; border: 1.5px solid #d8e3e1; border-radius: 6px;
+      padding: 0.6rem 0.85rem; outline: none; width: 100%;
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+    .rf input:focus, .rf select:focus { border-color: #457b9d; background: #fff; box-shadow: 0 0 0 3px rgba(69,123,157,0.1); }
+    .rf-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+    .reg-divider { height: 1px; background: #d8e3e1; }
+    .reg-submit {
+      font-family: var(--ff-sans); font-size: 0.95rem; font-weight: 600;
+      background: var(--coral); color: #fff; border: none;
+      border-radius: 30px; padding: 0.75rem 2rem; cursor: pointer;
+      transition: opacity 0.2s, transform 0.1s; width: 100%; margin-top: 0.4rem;
+    }
+    .reg-submit:hover { opacity: 0.88; }
+    .reg-submit:active { transform: scale(0.98); }
+    .reg-submit:disabled { opacity: 0.5; cursor: not-allowed; }
+
+    /* Thank you screen */
+    .reg-thankyou {
+      display: none; flex-direction: column; align-items: center;
+      text-align: center; gap: 1rem; padding: 2.4rem 2rem 2.8rem;
+    }
+    .reg-thankyou.show { display: flex; }
+    .reg-thankyou h3 { font-family: var(--ff-serif); font-size: 1.4rem; color: var(--navy); }
+    .reg-thankyou p { font-size: 0.88rem; color: #5a6b7a; max-width: 360px; line-height: 1.65; }
+    .reg-thankyou .qr-wrap {
+      background: #f3f7f6; border-radius: 10px; padding: 1.2rem 1.4rem;
+      display: flex; flex-direction: column; align-items: center; gap: 0.6rem;
+    }
+    .reg-thankyou .qr-wrap img { width: 160px; height: 160px; object-fit: contain; }
+    .reg-thankyou .qr-label { font-size: 0.78rem; color: #5a6b7a; }
+    .reg-thankyou .qr-amount { font-size: 1rem; font-weight: 600; color: var(--coral); }
+    .reg-thankyou .motto { font-family: var(--ff-serif); font-style: italic; color: #457b9d; font-size: 0.9rem; margin-top: 0.4rem; }
+
+    /* ── PAST WORKSHOP ───────────────────────────────────── */
+    .wk-past-header {
+      background: #f3f7f6;
+      padding: clamp(2rem, 5vw, 3rem) 0 clamp(1.5rem, 4vw, 2.5rem);
+      text-align: center;
+      border-top: 3px solid var(--sage);
+    }
+    .wk-past-header .eyebrow { color: var(--steel); }
+    .wk-past-header h2 { color: var(--navy); margin: 0.4rem auto 0; }
+    .wk-past-header p { color: #5a6b7a; max-width: 46ch; margin: 0.6rem auto 0; font-size: 0.9rem; line-height: 1.7; }
 
     .wk-photo-row {
       display: grid;
@@ -64,6 +157,7 @@
     .wk-photo-caption-block .attr { font-size: 0.82rem; color: var(--muted); font-style: normal; font-family: var(--ff-sans); }
     @media (max-width: 640px) {
       .wk-photo-row { grid-template-columns: 1fr; }
+      .rf-row { grid-template-columns: 1fr; }
     }
 
     .testimonials-grid {
@@ -95,28 +189,10 @@
       font-style: normal;
     }
 
-    .coming-soon-band {
-      background: #fdf0ed;
-      border: 1.5px solid #e63946;
-      border-radius: 14px;
-      padding: 2.4rem 2rem;
-      text-align: center;
-      margin-top: 3rem;
+    @media (max-width: 480px) {
+      .reg-body { padding: 1.4rem 1.2rem 1.8rem; }
+      .reg-head { padding: 1.5rem 1.2rem 1.2rem; }
     }
-    .coming-soon-band .cs-tag {
-      display: inline-block;
-      background: #e63946;
-      color: #fff;
-      font-size: 0.72rem;
-      font-weight: 500;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      padding: 4px 14px;
-      border-radius: 20px;
-      margin-bottom: 1rem;
-    }
-    .coming-soon-band h2 { color: #1d3557; margin-bottom: 0.6rem; }
-    .coming-soon-band p { color: #5a6b7a; max-width: 44ch; margin: 0 auto 1.4rem; font-size: 0.95rem; line-height: 1.7; }
   </style>
 </head>
 <body>
@@ -138,14 +214,34 @@
     </div>
   </header>
 
-  <!-- PAST WORKSHOP HERO -->
-  <section class="wk-past-hero">
-    <div class="wrap">
-      <div class="eyebrow">Past Workshop · July 2026</div>
+  <!-- UPCOMING WORKSHOP COVER -->
+  <section class="wk-cover">
+    <div class="wrap reveal">
+      <div class="eyebrow">Upcoming Workshop</div>
       <h1>Women's Reset and Reconnection</h1>
       <p>Finding Your Voice, Purpose and Peace again. A 2-day online workshop for women ready to pause, reconnect, and embrace the next chapter.</p>
+      <div class="wk-facts">
+        <span class="fact">🌿 2 Day Program</span>
+        <span class="fact">📅 26 & 27 September 2026</span>
+        <span class="fact">🕑 2:30pm - 5:00pm IST</span>
+        <span class="fact">💻 Online via Zoom</span>
+        <span class="fact">💰 ₹3,500</span>
+      </div>
+      <div class="btnrow" style="justify-content:center;margin-top:1.8rem">
+        <button class="btn btn-primary" onclick="openRegModal()" style="min-height:46px;">Register Now</button>
+        <a class="btn btn-ghost" href="https://wa.me/918080166955" target="_blank" rel="noopener" style="color:#fff;border-color:rgba(255,255,255,0.8);">Ask a Question</a>
+      </div>
     </div>
   </section>
+
+  <!-- PAST WORKSHOP HEADER -->
+  <div class="wk-past-header">
+    <div class="wrap">
+      <div class="eyebrow">Past Workshop · July 2026</div>
+      <h2>Here's what happened last time</h2>
+      <p>We ran the first Women's Reset and Reconnection workshop in July 2026. It was a beautiful two days.</p>
+    </div>
+  </div>
 
   <!-- GROUP PHOTO -->
   <section class="section band-white">
@@ -161,7 +257,7 @@
     </div>
   </section>
 
-  <!-- WHAT HAPPENED / TESTIMONIALS -->
+  <!-- TESTIMONIALS -->
   <section class="section band-white">
     <div class="wrap reveal">
       <h2>What participants shared</h2>
@@ -188,19 +284,7 @@
       </div>
 
       <div style="text-align:center;margin-top:2.4rem">
-        <a class="btn btn-ghost" href="contact.html?from=workshop">Interested in the next one? Let us know →</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- COMING SOON -->
-  <section class="section band-sage">
-    <div class="wrap reveal">
-      <div class="coming-soon-band">
-        <div class="cs-tag">Coming Soon</div>
-        <h2>Workshop for Working Professionals</h2>
-        <p>A new workshop designed specifically for working professionals navigating the demands of career, relationships, and personal growth. Dates to be announced soon.</p>
-        <a class="btn btn-primary" href="contact.html?from=workshop">Register my interest</a>
+        <button class="btn btn-primary" onclick="openRegModal()">Join us in September →</button>
       </div>
     </div>
   </section>
@@ -237,5 +321,116 @@
   </footer>
 
   <script src="main.js"></script>
+
+  <!-- REGISTRATION MODAL -->
+  <div id="reg-modal" role="dialog" aria-modal="true" aria-labelledby="reg-title" onclick="handleBackdrop(event)">
+    <div class="reg-card">
+      <div class="reg-head">
+        <div class="eyebrow">Women's Reset & Reconnection Workshop</div>
+        <h3 id="reg-title">Reserve Your Place</h3>
+        <div class="sub">26 & 27 September 2026 · 2:30pm–5:00pm IST · Online via Zoom</div>
+        <div style="margin-top:0.35rem;font-size:0.78rem;color:rgba(255,255,255,0.6)">Workshop fee: ₹3,500</div>
+        <button class="reg-close" onclick="closeRegModal()" aria-label="Close">&times;</button>
+      </div>
+
+      <!-- Form -->
+      <form id="reg-form" class="reg-body" action="https://formspree.io/f/mgojvkwl" method="POST">
+        <input type="hidden" name="_subject" value="New Workshop Registration — Sept 2026" />
+        <div class="rf-row">
+          <div class="rf">
+            <label>Full Name <span class="req">*</span></label>
+            <input type="text" name="full_name" placeholder="Your name" required />
+          </div>
+          <div class="rf">
+            <label>Contact No. <span class="req">*</span></label>
+            <input type="tel" name="contact" placeholder="+91 98765 43210" required />
+          </div>
+        </div>
+
+        <div class="rf">
+          <label>Email Address <span class="req">*</span></label>
+          <input type="email" name="email" placeholder="you@example.com" required />
+        </div>
+
+        <div class="rf">
+          <label>How did you find out about this workshop?</label>
+          <select name="referral">
+            <option value="">— Select —</option>
+            <option>Instagram / Social Media</option>
+            <option>WhatsApp message / broadcast</option>
+            <option>A friend or colleague</option>
+            <option>Let's Attune website</option>
+            <option>Attended the July workshop</option>
+            <option>Other</option>
+          </select>
+        </div>
+
+        <div class="reg-divider"></div>
+
+        <button type="submit" class="reg-submit" id="reg-submit-btn">Submit Registration →</button>
+        <p style="font-size:0.72rem;color:#5a6b7a;text-align:center;margin-top:-0.6rem">Your details are safe with us. This is a confidential, no-recordings space.</p>
+      </form>
+
+      <!-- Thank You Screen -->
+      <div class="reg-thankyou" id="reg-thankyou">
+        <div style="font-size:2.2rem">🌿</div>
+        <h3>Thank you for blocking your spot!</h3>
+        <p>We're so excited to have you join us. See you at the workshop!</p>
+        <p style="margin-top:0.6rem">To confirm your place, please complete your payment using the QR code below. Once we receive your payment, we'll confirm your spot on WhatsApp within 24 hours.</p>
+        <div class="qr-wrap">
+          <div class="qr-label">Scan to pay via UPI</div>
+          <img src="assets/upi-qr.jpeg" alt="UPI QR Code" onerror="this.style.display='none'" />
+          <div class="qr-amount">₹3,500</div>
+          <div class="qr-label">Once paid, your registration is confirmed.</div>
+        </div>
+        <p>Questions? <a href="https://wa.me/918080166955" target="_blank" style="color:#457b9d">Message us on WhatsApp →</a></p>
+        <div class="motto">EXPRESS · EXPLORE · EMPOWER · EVOLVE</div>
+        <button class="reg-close" onclick="closeRegModal()" style="position:static;background:var(--navy);width:auto;padding:0.5rem 1.4rem;border-radius:20px;font-size:0.82rem;margin-top:0.4rem">Close</button>
+      </div>
+
+    </div>
+  </div>
+
+  <script>
+    function openRegModal() {
+      document.getElementById('reg-modal').classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+    function closeRegModal() {
+      document.getElementById('reg-modal').classList.remove('open');
+      document.body.style.overflow = '';
+    }
+    function handleBackdrop(e) {
+      if (e.target === document.getElementById('reg-modal')) closeRegModal();
+    }
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeRegModal(); });
+
+    document.getElementById('reg-form').addEventListener('submit', async function(e) {
+      e.preventDefault();
+      const btn = document.getElementById('reg-submit-btn');
+      btn.disabled = true;
+      btn.textContent = 'Sending…';
+      try {
+        const res = await fetch(this.action, {
+          method: 'POST',
+          body: new FormData(this),
+          headers: { 'Accept': 'application/json' }
+        });
+        if (res.ok) {
+          this.style.display = 'none';
+          document.getElementById('reg-thankyou').classList.add('show');
+        } else {
+          btn.disabled = false;
+          btn.textContent = 'Submit Registration →';
+          alert('Something went wrong. Please try again or message us on WhatsApp.');
+        }
+      } catch(err) {
+        btn.disabled = false;
+        btn.textContent = 'Submit Registration →';
+        alert('Could not connect. Please check your internet and try again.');
+      }
+    });
+  </script>
+
 </body>
 </html>
