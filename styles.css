@@ -272,6 +272,13 @@ a { color: inherit; text-decoration: none; }
 
 /* ── COACH FLOAT BIO ──────────────────────────────────────── */
 .coach-float-wrap { overflow: hidden; }
+.founder-profile { background: #fff; }
+.founder-profile__layout { display: block; overflow: hidden; }
+.founder-profile__photo { float: left; width: min(31%, 310px); margin: 0 clamp(2rem,5vw,4.5rem) 1.5rem 0; position: relative; }
+.founder-profile__photo::before { content: ''; position: absolute; inset: 1rem -1rem -1rem 1rem; background: var(--bg-sage); }
+.founder-profile__photo img { position: relative; width: 100%; aspect-ratio: 4/5; object-fit: cover; object-position: center; display: block; }
+.founder-profile__copy .role { margin: .25rem 0 1.25rem; color: var(--steel); font-size: .8rem; font-weight: 500; letter-spacing: .08em; text-transform: uppercase; }
+.founder-profile__copy p + p { margin-top: 1rem; }
 .coach-photo-float { float: left; width: clamp(200px, 30%, 280px); height: 320px; border-radius: var(--radius); margin: 0 2rem 1.5rem 0; object-fit: cover; object-position: center 5%; box-shadow: 0 8px 32px rgba(29,53,87,0.18); display: block; }
 
 /* lifelines inside bio */
@@ -316,6 +323,7 @@ a { color: inherit; text-decoration: none; }
   .facilitator-grid { grid-template-columns: 1fr; text-align: center; }
   .facilitator-photo { margin: 0 auto; }
   .kalki-photo { width: 140px !important; height: 140px !important; }
+  .founder-profile__photo { float: none; width: calc(100% - 1rem); max-width: 260px; margin: 0 auto 2.2rem; }
 }
 
 /* ── WORKSHOPS PAGE ───────────────────────────────────────── */
