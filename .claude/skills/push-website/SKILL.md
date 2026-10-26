@@ -10,7 +10,8 @@ Do this whole flow yourself, in plain language, without asking her to run any co
 
 ## Steps
 
-1. Make sure you are in the repo: `D:\code\letsattune\letsattune-website`.
+1. Make sure you are in this repo — the `letsattune-website` folder this session is open in. Its place
+   differs per machine, so do not assume a path.
 2. See what changed: `git status --short`.
    - If **nothing** changed, tell her warmly: "There's nothing new to publish — your website is already up to date." Then stop.
 3. Stage everything: `git add -A`.
