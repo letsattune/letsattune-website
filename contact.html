@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,WONK@0,9..144,500,0;0,9..144,600,0;0,9..144,700,0;1,9..144,500,0;1,9..144,600,0&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="styles.css?v=122" />
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-HD6TJQ2L2W"></script>
   <script>
@@ -49,8 +49,8 @@
       padding: 1.4rem 1.8rem;
       border-bottom: 1px solid var(--line);
     }
-    .cfc-head h2 { font-size: 1.1rem; color: var(--navy); margin: 0; }
-    .cfc-head p { font-size: 0.82rem; color: var(--muted); margin: 0.25rem 0 0; }
+    .cfc-head h2 { font-size: var(--type-section-title); color: var(--navy); margin: 0; }
+    .cfc-head p { font-size: var(--type-body); color: var(--muted); margin: 0.25rem 0 0; }
     .cfc-body { padding: 1.8rem; display: flex; flex-direction: column; gap: 1.1rem; }
 
     .cf { display: flex; flex-direction: column; gap: 0.32rem; }
@@ -99,8 +99,8 @@
       text-align: center; gap: 0.9rem; padding: 3rem 1.8rem 3.5rem;
     }
     .cf-thankyou.show { display: flex; }
-    .cf-thankyou h3 { font-family: var(--ff-serif); font-size: 1.5rem; color: var(--navy); }
-    .cf-thankyou p { font-size: 0.88rem; color: var(--muted); max-width: 320px; line-height: 1.65; }
+    .cf-thankyou h3 { font-family: var(--ff-serif); font-size: var(--type-card-title); color: var(--navy); }
+    .cf-thankyou p { font-size: var(--type-body); color: var(--muted); max-width: 320px; line-height: 1.65; }
     .cf-thankyou .motto { font-family: var(--ff-serif); font-style: italic; color: var(--steel); font-size: 0.9rem; margin-top: 0.4rem; }
 
     /* Sidebar */
@@ -111,7 +111,7 @@
       padding: 1.4rem 1.5rem;
     }
     .aside-card h4 { font-size: 0.8rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--coral); margin-bottom: 0.7rem; }
-    .aside-card p, .aside-card a { font-size: 0.88rem; color: var(--muted); line-height: 1.6; text-decoration: none; }
+    .aside-card p, .aside-card a { font-size: var(--type-body); color: var(--muted); line-height: 1.6; text-decoration: none; }
     .aside-card a:hover { color: var(--navy); }
     .aside-card .contact-item { display: flex; align-items: flex-start; gap: 0.6rem; margin-bottom: 0.55rem; }
     .aside-card .contact-item:last-child { margin-bottom: 0; }
@@ -136,7 +136,7 @@
     }
   </style>
 </head>
-<body>
+<body class="site-page">
 
   <!-- HEADER -->
   <header class="site-header">
@@ -145,12 +145,13 @@
         <img src="assets/Lets Attune logo.png" alt="Let's Attune" />
         <span class="name">Let's Attune</span>
       </a>
-      <button class="menu-toggle" aria-label="Menu"><span></span><span></span><span></span></button>
-      <nav class="nav">
-        <a class="link" href="index.html">Home</a>
+      <button class="menu-toggle" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
+      <nav class="nav" aria-label="Main navigation">
+        <a class="link" href="index.html#ways">Work with us</a>
+        <a class="link" href="our-work.html">Our work</a>
         <a class="link" href="about.html">About</a>
-        <a class="link" href="workshops.html">Workshops</a>
-        <a class="btn btn-primary active" href="contact.html">Contact Us</a>
+        <a class="link active" href="contact.html">Contact us</a>
+        <a class="btn btn-primary nav-app" href="https://mecove.com">Explore meCove</a>
       </nav>
     </div>
   </header>
@@ -241,8 +242,13 @@
 
             <div class="cf-divider"></div>
 
+            <label class="privacy-consent">
+              <input type="checkbox" name="privacy_acknowledgement" required />
+              <span>I understand that Let's Attune will use these details to respond to my enquiry, as explained in the <a href="privacy.html" target="_blank">Privacy Policy</a>.</span>
+            </label>
+
             <button type="submit" class="cf-submit" id="cf-submit-btn">Send Message →</button>
-            <p style="font-size:0.72rem;color:var(--muted);text-align:center;margin-top:-0.5rem">Your details are safe with us and will never be shared.</p>
+            <p style="font-size:0.72rem;color:var(--muted);text-align:center;margin-top:-0.5rem">We use your details only to respond to you and provide the support you request.</p>
           </form>
 
           <!-- Thank You -->
@@ -269,7 +275,7 @@
             </div>
             <div class="contact-item">
               <span class="contact-icon">✉️</span>
-              <a href="mailto:shilpa@letsattune.com">shilpa@letsattune.com</a>
+              <a href="mailto:hello@letsattune.com">hello@letsattune.com</a>
             </div>
           </div>
 
@@ -312,16 +318,16 @@
           <h4>Connect</h4>
           <ul>
             <li><a href="https://wa.me/918080166955" target="_blank" rel="noopener">WhatsApp / Call</a><br>+91 8080166955</li>
-            <li><a href="mailto:shilpa@letsattune.com">shilpa@letsattune.com</a></li>
+            <li><a href="mailto:hello@letsattune.com">hello@letsattune.com</a></li>
           </ul>
         </div>
       </div>
       <div class="footer-motto">EXPRESS : EXPLORE : EMPOWER : EVOLVE</div>
-      <div class="footer-copy">© <span data-year>2026</span> Let's Attune · Shilpa Jahagirdar, PCC · ICF Certified</div>
+      <div class="footer-copy">© <span data-year>2026</span> Let's Attune Pvt. Ltd.</div>
     </div>
   </footer>
 
-  <script src="main.js"></script>
+  <script src="main.js?v=20261028a"></script>
   <script>
     // Show workshop banner and pre-select topic if redirected from workshops page
     if (new URLSearchParams(window.location.search).get('from') === 'workshop') {
