@@ -4,350 +4,39 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Workshops | Let's Attune</title>
-  <meta name="description" content="Join the Women's Reset and Reconnection Workshop, 26 & 27 September 2026, with PCC coach Shilpa Jahagirdar." />
+  <meta name="description" content="Explore reflective, participative Let's Attune workshops for people, groups and organisations." />
   <link rel="icon" type="image/png" href="assets/Lets Attune logo.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,WONK@0,9..144,500,0;0,9..144,600,0;0,9..144,700,0;1,9..144,500,0;1,9..144,600,0&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css" />
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-HD6TJQ2L2W"></script>
-  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-HD6TJQ2L2W');</script>
-
-  <style>
-    /* COVER */
-    .wk-cover { background: #1d3557; padding: 4rem 0 3.5rem; text-align: center; min-height: unset; display: block; overflow: visible; }
-    .wk-cover::after { display: none; }
-    .wk-cover .eyebrow { color: #abc9c9; }
-    .wk-cover h1 { color: #fff; margin: 0.4rem auto 0; max-width: 24ch; }
-    .wk-cover p { color: rgba(255,255,255,0.7); max-width: 46ch; margin: 0.8rem auto 0; font-size: 0.95rem; line-height: 1.7; }
-    .wk-facts { display: flex; flex-wrap: wrap; gap: 0.6rem; justify-content: center; margin: 1.4rem auto 0; }
-    .fact { background: rgba(255,255,255,0.1); color: rgba(255,255,255,0.85); font-size: 0.85rem; padding: 0.4rem 1rem; border-radius: 20px; border: 1px solid rgba(255,255,255,0.2); }
-    .wk-cover .btnrow { justify-content: center; margin-top: 2rem; }
-    .wk-cover .btn-ghost { color: #fff !important; border-color: rgba(255,255,255,0.7) !important; }
-
-    /* PAST WORKSHOP DIVIDER */
-    .past-divider { background: #f3f7f6; border-top: 3px solid #abc9c9; padding: 2.5rem 0 2rem; text-align: center; }
-    .past-divider .eyebrow { color: #457b9d; }
-    .past-divider h2 { color: #1d3557; margin: 0.4rem auto 0; }
-    .past-divider p { color: #5a6b7a; max-width: 46ch; margin: 0.6rem auto 0; font-size: 0.9rem; line-height: 1.7; }
-
-    /* PHOTO ROW */
-    .photo-row { display: grid; grid-template-columns: 320px 1fr; gap: 2rem; align-items: center; background: #dbe8e6; border-radius: 12px; padding: 1.5rem; max-width: 860px; margin: 0 auto; }
-    .photo-row img { width: 100%; border-radius: 10px; object-fit: contain; display: block; }
-    .photo-text .eyebrow { color: #457b9d; margin-bottom: 0.5rem; }
-    .photo-text blockquote { font-family: var(--ff-serif); font-style: italic; font-size: 1rem; color: #1d3557; line-height: 1.75; margin: 0 0 0.6rem; }
-    .photo-text cite { font-size: 0.82rem; color: #7a8b96; font-style: normal; }
-    @media (max-width: 640px) { .photo-row { grid-template-columns: 1fr; } }
-
-    /* TESTIMONIALS */
-    .t-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem; margin-top: 2rem; }
-    @media (max-width: 600px) { .t-grid { grid-template-columns: 1fr; } }
-    .tcard { background: #fff; border-radius: 10px; border-left: 4px solid #e63946; padding: 1.3rem 1.4rem; box-shadow: 0 4px 16px rgba(29,53,87,0.07); }
-    .tcard p { font-size: 0.92rem; color: #1d3557; font-style: italic; line-height: 1.65; margin: 0 0 0.5rem; }
-    .tcard span { font-size: 0.76rem; color: #7a8b96; }
-
-    /* MODAL OVERLAY */
-    .modal-overlay {
-      display: none;
-      position: fixed;
-      top: 0; left: 0; right: 0; bottom: 0;
-      z-index: 2000;
-      background: rgba(29,53,87,0.6);
-      overflow-y: auto;
-      padding: 2rem 1rem 3rem;
-    }
-    .modal-overlay.is-open { display: block; }
-
-    /* MODAL CARD */
-    .modal-card {
-      background: #fff;
-      border-radius: 14px;
-      box-shadow: 0 24px 60px rgba(0,0,0,0.2);
-      width: 100%;
-      max-width: 540px;
-      margin: 0 auto;
-      overflow: hidden;
-    }
-    .modal-head { background: #1d3557; padding: 1.8rem 2rem 1.5rem; text-align: center; position: relative; }
-    .modal-head .eyebrow { color: #abc9c9; font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 0.3rem; }
-    .modal-head h3 { font-family: var(--ff-serif); color: #fff; font-size: 1.4rem; font-weight: 600; line-height: 1.25; margin: 0; }
-    .modal-head p { color: rgba(255,255,255,0.6); font-size: 0.8rem; margin: 0.4rem 0 0; }
-    .modal-close-btn {
-      position: absolute; top: 1rem; right: 1rem;
-      background: rgba(255,255,255,0.15); border: none; color: #fff;
-      width: 32px; height: 32px; border-radius: 50%;
-      font-size: 1.2rem; cursor: pointer; line-height: 32px; text-align: center;
-    }
-    .modal-close-btn:hover { background: rgba(255,255,255,0.3); }
-    .modal-body { padding: 1.8rem 2rem 2rem; }
-    .modal-body form { display: flex; flex-direction: column; gap: 1.1rem; }
-    .field { display: flex; flex-direction: column; gap: 0.3rem; }
-    .field label { font-size: 0.75rem; font-weight: 500; color: #5a6b7a; text-transform: uppercase; letter-spacing: 0.04em; }
-    .field label .req { color: #e63946; }
-    .field input, .field select {
-      font-family: var(--ff-sans); font-size: 0.91rem; color: #1d3557;
-      background: #f3f7f6; border: 1.5px solid #d0dbd8; border-radius: 6px;
-      padding: 0.62rem 0.85rem; width: 100%; outline: none;
-      transition: border-color 0.2s;
-    }
-    .field input:focus, .field select:focus { border-color: #457b9d; background: #fff; }
-    .field-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
-    @media (max-width: 480px) { .field-row { grid-template-columns: 1fr; } }
-    .divider { height: 1px; background: #d0dbd8; margin: 0.4rem 0; }
-    .submit-btn {
-      background: #e63946; color: #fff; border: none;
-      border-radius: 30px; padding: 0.8rem 2rem;
-      font-family: var(--ff-sans); font-size: 0.95rem; font-weight: 600;
-      cursor: pointer; width: 100%; transition: opacity 0.2s;
-    }
-    .submit-btn:hover { opacity: 0.88; }
-    .submit-btn:disabled { opacity: 0.5; cursor: not-allowed; }
-    .privacy-note { font-size: 0.71rem; color: #7a8b96; text-align: center; }
-
-    /* THANK YOU */
-    .modal-thankyou { display: none; flex-direction: column; align-items: center; text-align: center; padding: 2.4rem 2rem 2.8rem; gap: 0.9rem; }
-    .modal-thankyou.show { display: flex; }
-    .modal-thankyou h3 { font-family: var(--ff-serif); font-size: 1.4rem; color: #1d3557; margin: 0; }
-    .modal-thankyou p { font-size: 0.88rem; color: #5a6b7a; max-width: 340px; line-height: 1.65; margin: 0; }
-    .qr-box { background: #f3f7f6; border-radius: 10px; padding: 1.2rem 1.4rem; display: flex; flex-direction: column; align-items: center; gap: 0.5rem; }
-    .qr-box img { width: 160px; height: 160px; object-fit: contain; }
-    .qr-box .amount { font-size: 1.05rem; font-weight: 600; color: #e63946; }
-    .qr-box .note { font-size: 0.76rem; color: #7a8b96; }
-    .modal-motto { font-family: var(--ff-serif); font-style: italic; color: #457b9d; font-size: 0.88rem; }
-    .close-link { font-size: 0.82rem; color: #457b9d; cursor: pointer; text-decoration: underline; }
-  </style>
+  <link rel="stylesheet" href="styles.css?v=122" />
 </head>
-<body>
+<body class="site-page home-redesign service-page workshops-page">
+  <header class="site-header"><div class="wrap"><a class="brand" href="index.html"><img src="assets/Lets Attune logo.png" alt="Let's Attune" /><span class="name">Let's Attune</span></a><button class="menu-toggle" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button><nav class="nav" aria-label="Main navigation"><a class="link active" href="index.html#ways">Work with us</a><a class="link" href="index.html#our-work">Our work</a><a class="link" href="about.html">About</a><a class="link" href="contact.html">Contact us</a><a class="btn btn-primary nav-app" href="https://mecove.com">Explore meCove</a></nav></div></header>
 
-  <!-- HEADER -->
-  <header class="site-header">
-    <div class="wrap">
-      <a class="brand" href="index.html">
-        <img src="assets/Lets Attune logo.png" alt="Let's Attune" />
-        <span class="name">Let's Attune</span>
-      </a>
-      <button class="menu-toggle" aria-label="Menu"><span></span><span></span><span></span></button>
-      <nav class="nav">
-        <a class="link" href="index.html">Home</a>
-        <a class="link" href="about.html">About</a>
-        <a class="link active" href="workshops.html">Workshops</a>
-        <a class="btn btn-primary" href="contact.html">Contact Us</a>
-      </nav>
-    </div>
-  </header>
+  <main>
+    <section class="workshops-hero"><div class="wrap workshops-hero__layout"><div class="workshops-hero__copy reveal"><p class="eyebrow">Let's Attune workshops</p><h1>Workshops for people, teams and organisations.</h1><p>Participative learning experiences designed around what people are facing, what they need to understand and what they want to change.</p><div class="home-actions"><a class="btn btn-primary" href="#topic-areas">Explore workshop topics</a><a class="text-link" href="#selected-work">See our past work <span>↓</span></a></div></div><div class="workshops-hero__visual reveal"><div class="workshops-hero__photo"><img src="assets/workshop-lbs-group-clean.png" alt="Shilpa with students after a Let's Attune workshop" /></div><strong>Relevant. Participative. Practical.</strong></div></div></section>
 
-  <!-- UPCOMING WORKSHOP -->
-  <section class="wk-cover">
-    <div class="wrap">
-      <div class="eyebrow">Upcoming Workshop</div>
-      <h1>Women's Reset and Reconnection</h1>
-      <p>Finding Your Voice, Purpose and Peace again.<br>A 2-day online workshop for women ready to pause, reconnect, and embrace the next chapter.</p>
-      <div class="wk-facts">
-        <span class="fact">🌿 2 Day Program</span>
-        <span class="fact">📅 26 & 27 September 2026</span>
-        <span class="fact">🕑 2:30pm - 5:00pm IST</span>
-        <span class="fact">💻 Online via Zoom</span>
-        <span class="fact">💰 ₹3,500</span>
-      </div>
-      <div class="btnrow">
-        <button class="btn btn-primary" id="open-modal-btn" style="min-height:46px">Register Now</button>
-        <a class="btn btn-ghost" href="https://wa.me/918080166955" target="_blank" rel="noopener" style="color:#fff;border-color:rgba(255,255,255,0.7)">Ask a Question</a>
-      </div>
-    </div>
-  </section>
+    <section class="section workshop-topics" id="topic-areas"><div class="wrap"><div class="workshop-topics__intro reveal"><p class="eyebrow">Our topic areas</p><h2>Topics we can work on together.</h2><p>These areas can stand alone or come together in one workshop, depending on what your group needs.</p></div><div class="topic-constellation reveal"><article class="topic-area topic-area--confidence"><span>01</span><h3>Confidence & expression</h3><p>Finding your voice, communicating with greater ease and meeting important moments with more self-belief.</p></article><article class="topic-area topic-area--balance"><span>02</span><h3>Balance, boundaries & wellbeing</h3><p>Understanding the pressures people carry and exploring more sustainable ways to respond.</p></article><article class="topic-area topic-area--listening"><span>03</span><h3>Collaboration & team dynamics</h3><p>Navigating differences, difficult conversations and conflict while building trust and stronger ways of working together.</p></article><article class="topic-area topic-area--care"><span>04</span><h3>Change & adaptability</h3><p>Helping people understand their response to change, work through uncertainty and adjust to new roles or expectations.</p></article><article class="topic-area topic-area--awareness"><span>05</span><h3>Awareness, resilience & support</h3><p>Building perspective around difficult experiences and strengthening awareness of support and appropriate help.</p></article><i aria-hidden="true"></i></div></div></section>
 
-  <!-- PAST WORKSHOP DIVIDER -->
-  <div class="past-divider">
-    <div class="wrap">
-      <div class="eyebrow">Past Workshop · July 2026</div>
-      <h2>Here's what happened last time</h2>
-      <p>We ran the first Women's Reset and Reconnection workshop in July 2026. It was a beautiful two days.</p>
-    </div>
-  </div>
+    <section class="workshop-proof"><div class="wrap workshop-proof__grid"><div><strong>150+</strong><span>documented participants, alongside our public workshops</span></div><div><strong>4</strong><span>different learning and community settings</span></div><div><strong>Online + in person</strong><span>formats shaped around the audience</span></div><div><strong>2 hours to one month</strong><span>from focused workshops to multi-session journeys</span></div></div></section>
 
-  <!-- PHOTO + QUOTE -->
-  <section class="section band-white">
-    <div class="wrap">
-      <div class="photo-row reveal">
-        <img src="assets/JulyWorkshop2026LW.jpg" alt="Workshop group photo, July 2026" />
-        <div class="photo-text">
-          <div class="eyebrow">July 2026 · Online via Zoom</div>
-          <blockquote>"It was such a warm experience. I am truly grateful to everyone who was part of this journey - their stories, their hopes, and what they are looking for ahead. It reminded me, once again, that we are all so capable. Sometimes all we need is a little light to see it."</blockquote>
-          <cite>- Shilpa</cite>
-        </div>
-      </div>
-    </div>
-  </section>
+    <section class="section selected-work" id="selected-work"><div class="wrap"><div class="selected-work__heading reveal"><div><p class="eyebrow">Selected work</p><h2>Some workshops we have designed and delivered.</h2></div><p>This is a selection rather than a complete list. Open a workshop to see who it was for, how it was structured and what participants took away.</p></div><div class="engagement-list">
+      <details class="workshop-story reveal"><summary><span class="story-number">01</span><span><small>Community · Online · 20 participants</small><strong>It's Time to Rise</strong><em>Awareness and resilience during Suicide Awareness Month</em></span><b>+</b></summary><div class="story-detail"><div><p>Weekly group learning combined with optional one-to-one coaching across one month. The journey explored inner patterns, levels of listening, grief and change, routes to support, and a wider view of life ahead.</p><strong>Participants found perspective, a place to speak and insight into what may sit beneath the surface.</strong></div></div></details>
+      <details class="workshop-story reveal"><summary><span class="story-number">02</span><span><small>Business school · In person · 50 students</small><strong>Confidence in the Moment</strong><em>Preparing for interviews and spontaneous questions</em></span><b>+</b></summary><div class="story-detail"><div><p>Four activity-led and interactive hours turned a situation often approached with fear into an active, engaging learning experience.</p><strong>Participants described it as highly interactive, enjoyable and full of learning.</strong></div></div></details>
+      <details class="workshop-story reveal"><summary><span class="story-number">03</span><span><small>Workplace community · In person · Two groups of 40</small><strong>Work, Life and the Boundaries Between</strong><em>Stress, boundaries and sustainable balance</em></span><b>+</b></summary><div class="story-detail"><div><p>Interactive conversation and a practical worksheet created room to examine stress, boundaries, balance and the moments in which we know what matters but still miss the mark.</p><strong>The participants asked for more sessions like it.</strong></div></div></details>
+      <details class="workshop-story reveal"><summary><span class="story-number">04</span><span><small>Open workshop · Online · Two-day experience</small><strong>Women's Reset & Reconnection</strong><em>Voice, purpose and peace</em></span><b>+</b></summary><div class="story-detail"><div><p>Across two thoughtful sessions, participants slowed down, spoke about what had gone unnoticed and looked at the chapter ahead with renewed awareness.</p><strong>“This workshop was awakening.” Participants valued the warmth, reflection and freedom to speak openly.</strong></div></div></details>
+      <details class="workshop-story reveal"><summary><span class="story-number">05</span><span><small>NGO members · Online · One month</small><strong>Taking Dreams to Reality</strong><em>A combination of workshops and coaching sessions</em></span><b>+</b></summary><div class="story-detail"><div><p>A month-long online experience combining group workshops with coaching sessions. Participants listened more closely to what was getting in the way, recognised the saboteurs and self-talk holding them back, and found a more honest way to push themselves forward.</p><strong>A space to turn possibility into a clearer, more purposeful next step.</strong></div></div></details>
+    </div></div></section>
 
-  <!-- TESTIMONIALS -->
-  <section class="section band-white">
-    <div class="wrap reveal">
-      <h2>What participants shared</h2>
-      <div class="rule"></div>
-      <p style="max-width:60ch">It was a privilege to hold this space. Here is what some of the women who attended had to say:</p>
-      <div class="t-grid">
-        <div class="tcard">
-          <p>"This workshop was awakening."</p>
-          <span>- Participant</span>
-        </div>
-        <div class="tcard">
-          <p>"I don't want this to end... it felt so good to speak out."</p>
-          <span>- Participant</span>
-        </div>
-        <div class="tcard">
-          <p>"Both sessions helped me slow down and think about things I had not paid attention to."</p>
-          <span>- Participant</span>
-        </div>
-        <div class="tcard">
-          <p>"Great session. Let's stay connected and support each other."</p>
-          <span>- Participant</span>
-        </div>
-      </div>
-      <div style="text-align:center;margin-top:2rem">
-        <button class="btn btn-primary" id="open-modal-btn-2">You haven't missed out —<br>Join us for our workshop this month</button>
-      </div>
-    </div>
-  </section>
+    <section class="section workshop-custom"><div class="wrap workshop-custom__layout"><div class="reveal"><p class="eyebrow">Custom workshops</p><h2>We design the workshop around your people.</h2><p>Tell us who the workshop is for, what they are facing and what you want them to leave with. We will recommend the topic, activities, format and duration.</p><a class="btn btn-primary" href="contact.html">Discuss a workshop</a></div><div class="custom-path reveal"><article><span>01</span><div><strong>You share the need</strong><p>Who is attending, what is happening and what should the workshop help with?</p></div></article><article><span>02</span><div><strong>We design the session</strong><p>We choose the right topics, examples, activities, depth and duration.</p></div></article><article><span>03</span><div><strong>People participate</strong><p>The session creates room to think, speak, practise and learn together.</p></div></article><article><span>04</span><div><strong>They leave with something useful</strong><p>Clear insights, practical tools or agreed next steps that continue after the workshop.</p></div></article></div></div></section>
 
-  <!-- FOOTER -->
-  <footer class="site-footer">
-    <div class="wrap">
-      <div class="footer-grid">
-        <div>
-          <div class="name">Let's Attune</div>
-          <p style="color:rgba(255,255,255,0.7)">Reflective, emotionally safe spaces to pause, understand yourself, and move forward with clarity.</p>
-          <img class="footer-qr" src="assets/qr.png" alt="WhatsApp QR — Let's Attune" />
-        </div>
-        <div>
-          <h4>Explore</h4>
-          <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="workshops.html">Workshops</a></li>
-            <li><a href="contact.html">Contact Us</a></li>
-          </ul>
-        </div>
-        <div>
-          <h4>Connect</h4>
-          <ul>
-            <li><a href="https://wa.me/918080166955" target="_blank" rel="noopener">WhatsApp / Call</a><br>+91 8080166955</li>
-            <li><a href="mailto:hello@letsattune.com">hello@letsattune.com</a></li>
-          </ul>
-        </div>
-      </div>
-      <div class="footer-motto">EXPRESS : EXPLORE : EMPOWER : EVOLVE</div>
-      <div class="footer-copy">© <span data-year>2026</span> Let's Attune Pvt. Ltd.</div>
-    </div>
-  </footer>
+    <section class="section workshop-audiences" id="audiences"><div class="wrap audience-showcase"><div class="audience-content reveal"><div class="workshop-audiences__heading"><p class="eyebrow">Some of the people we have worked with</p><h2>Our workshops have reached different groups and settings.</h2><p>These are a few examples from the many workshops and group sessions we have facilitated.</p></div><div class="audience-list"><span>Working professionals</span><span>Business school students</span><span>Managers and emerging leaders</span><span>NGO members</span><span>Public workshop participants</span><span>Community groups</span></div></div><div class="audience-collage reveal" aria-label="Photographs from some past workshops"><figure><img src="assets/workshop-school.jpeg" alt="A Let's Attune session with students" /></figure><figure><img src="assets/workshop-tata-shilpa-visible-v2.png" alt="Shilpa and participants at a workplace community workshop" /></figure><figure><img src="assets/JulyWorkshop2026LW.jpg" alt="Participants in an online Let's Attune workshop" /></figure></div></div></section>
 
-  <!-- REGISTRATION MODAL -->
-  <div class="modal-overlay" id="reg-modal">
-    <div class="modal-card">
+    <section class="section workshop-upcoming" id="upcoming"><div class="wrap workshop-upcoming__layout"><div class="reveal"><p class="eyebrow">Upcoming workshops</p><h2>Hear about the next public workshop.</h2><p>Dates and registration details will appear here when the next workshop opens.</p></div><div class="workshop-upcoming__action reveal"><p>Would you like us to let you know?</p><a class="btn btn-primary" href="https://wa.me/918080166955">Register your interest</a></div></div></section>
+  </main>
 
-      <div class="modal-head">
-        <div class="eyebrow">Women's Reset & Reconnection</div>
-        <h3>Reserve Your Place</h3>
-        <p>26 & 27 September 2026 · 2:30pm–5:00pm IST · Online via Zoom · ₹3,500</p>
-        <button class="modal-close-btn" id="close-modal-btn" aria-label="Close">&times;</button>
-      </div>
-
-      <div class="modal-body">
-        <form id="reg-form" action="https://formspree.io/f/mgojvkwl" method="POST">
-          <input type="hidden" name="_subject" value="Workshop Registration — Sept 2026" />
-
-          <div class="field-row">
-            <div class="field">
-              <label>Full Name <span class="req">*</span></label>
-              <input type="text" name="full_name" placeholder="Your name" required />
-            </div>
-            <div class="field">
-              <label>Contact No. <span class="req">*</span></label>
-              <input type="tel" name="contact" placeholder="+91 98765 43210" required />
-            </div>
-          </div>
-
-          <div class="field">
-            <label>Email Address <span class="req">*</span></label>
-            <input type="email" name="email" placeholder="you@example.com" required />
-          </div>
-
-          <div class="field">
-            <label>How did you hear about this?</label>
-            <select name="referral">
-              <option value="">— Select —</option>
-              <option>Instagram / Social Media</option>
-              <option>WhatsApp message / broadcast</option>
-              <option>A friend or colleague</option>
-              <option>Let's Attune website</option>
-              <option>Attended the July workshop</option>
-              <option>Other</option>
-            </select>
-          </div>
-
-          <div class="divider"></div>
-          <button type="submit" class="submit-btn" id="submit-btn">Submit Registration →</button>
-          <p class="privacy-note">Your details are safe with us. This is a confidential, no-recordings space.</p>
-        </form>
-
-        <div class="modal-thankyou" id="reg-thankyou">
-          <div style="font-size:2.2rem">🌿</div>
-          <h3>Thank you for blocking your spot!</h3>
-          <p>We're so excited to have you join us. See you at the workshop!</p>
-          <p>To confirm your place, please pay using the QR code below. Once we receive your payment, we'll confirm your spot on WhatsApp within 24 hours.</p>
-          <div class="qr-box">
-            <div class="note">Scan to pay via UPI</div>
-            <img src="assets/upi-qr.jpeg" alt="UPI QR Code" />
-            <div class="amount">₹3,500</div>
-            <div class="note">Once paid, your registration is confirmed.</div>
-          </div>
-          <p>Questions? <a href="https://wa.me/918080166955" target="_blank" style="color:#457b9d">Message us on WhatsApp →</a></p>
-          <div class="modal-motto">EXPRESS · EXPLORE · EMPOWER · EVOLVE</div>
-          <span class="close-link" id="close-modal-link">Close</span>
-        </div>
-      </div>
-
-    </div>
-  </div>
-
-  <script src="main.js"></script>
-  <script>
-    var modal = document.getElementById('reg-modal');
-    var form = document.getElementById('reg-form');
-    var thankyou = document.getElementById('reg-thankyou');
-
-    function openModal() { modal.classList.add('is-open'); document.body.style.overflow = 'hidden'; }
-    function closeModal() { modal.classList.remove('is-open'); document.body.style.overflow = ''; }
-
-    document.getElementById('open-modal-btn').addEventListener('click', openModal);
-    document.getElementById('open-modal-btn-2').addEventListener('click', openModal);
-    document.getElementById('close-modal-btn').addEventListener('click', closeModal);
-    document.getElementById('close-modal-link').addEventListener('click', closeModal);
-
-    modal.addEventListener('click', function(e) { if (e.target === modal) closeModal(); });
-    document.addEventListener('keydown', function(e) { if (e.key === 'Escape') closeModal(); });
-
-    form.addEventListener('submit', async function(e) {
-      e.preventDefault();
-      var btn = document.getElementById('submit-btn');
-      btn.disabled = true;
-      btn.textContent = 'Sending…';
-      try {
-        var res = await fetch(form.action, { method: 'POST', body: new FormData(form), headers: { 'Accept': 'application/json' } });
-        if (res.ok) {
-          form.style.display = 'none';
-          thankyou.classList.add('show');
-        } else {
-          btn.disabled = false;
-          btn.textContent = 'Submit Registration →';
-          alert('Something went wrong. Please try again or message us on WhatsApp.');
-        }
-      } catch(err) {
-        btn.disabled = false;
-        btn.textContent = 'Submit Registration →';
-        alert('Could not connect. Please check your internet and try again.');
-      }
-    });
-  </script>
-
+  <footer class="site-footer site-footer--company"><div class="wrap"><div class="footer-grid footer-grid--company"><div><div class="name">Let's Attune</div><p>A personal growth ecosystem helping people understand what is really going on and find their way forward.</p><p class="footer-company">LET'S ATTUNE PVT. LTD. · Pune, India</p></div><div><h4>Work with us</h4><ul><li><a href="coaching.html">Individual coaching</a></li><li><a href="workshops.html">Workshops</a></li><li><a href="gatherings.html">Attune Gatherings</a></li><li><a href="working-professionals.html">For working professionals</a></li></ul></div><div><h4>Explore</h4><ul><li><a href="index.html#our-work">Our work</a></li><li><a href="about.html">About</a></li><li><a href="https://mecove.com">meCove</a></li><li><a href="contact.html">Contact us</a></li></ul></div><div><h4>Connect</h4><ul><li><a href="https://wa.me/918080166955">WhatsApp / Call</a><br>+91 80801 66955</li><li><a href="mailto:hello@letsattune.com">hello@letsattune.com</a></li></ul></div></div><div class="footer-motto">EXPRESS : EXPLORE : EMPOWER : EVOLVE</div><div class="footer-copy">© <span data-year>2026</span> Let's Attune Pvt. Ltd.</div></div></footer>
+  <script src="main.js?v=20261028a"></script>
 </body>
 </html>
