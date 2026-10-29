@@ -25,10 +25,25 @@ Static HTML website for Shilpa Jahagirdar's life coaching business **Let's Attun
 Hosted on GitHub Pages at `letsattune.com` (custom domain).
 
 ## Repo
-- GitHub account: `shilpa-attune`
-- Repo: `shilpa-attune/letsattune-website`
-- SSH alias: `github-letsattune-website`
-- Push command: `git remote set-url origin git@github-letsattune-website:shilpa-attune/letsattune-website.git`
+- Repo: `letsattune/letsattune-website` (the Let's Attune organisation on GitHub,
+  https://github.com/letsattune/letsattune-website). It was `shilpa-attune/letsattune-website` before;
+  GitHub forwards the old address, so an older clone (including one that pushes through the SSH alias
+  `github-letsattune-website`) keeps working. New clones use `https://github.com/letsattune/letsattune-website.git`.
+- Shilpa's GitHub login is `shilpa-attune`; San's is `archisandev`. Both can push.
+- Cloned next to `letsattune-social` and `mecove-claude-space`, in one folder per machine.
+
+## Social content (reels, YouTube, Instagram)
+Lives in the **`letsattune-social`** repo, cloned next to this one (`../letsattune-social`), with its
+photos and videos on the **letsattune-social** Google shared drive. Channels: YouTube
+https://www.youtube.com/@LetsAttune and Let's Attune's Instagram.
+- **This website is the source of the brand.** `letsattune-social` reads this repo's `CONTEXT.md` for
+  every word it writes, and keeps a copy of the look (colours, fonts, logo) in
+  `brands/letsattune/brand/`. If you change the logo, colours or fonts here, tell Shilpa or San the
+  reels' copy needs updating too — or update it in `letsattune-social` in the same session.
+- **Programs** (workshops, listening circles, corporate programs) have their pages here and their reels
+  in `letsattune-social/brands/letsattune/programs/<program>/`. When a program page changes here (dates,
+  price, wording), check whether its reels or posts need the same change, and the reverse.
+- To make a reel: open `letsattune-social` and use `/reel`.
 
 ## Hosting
 - Platform: GitHub Pages (free)
