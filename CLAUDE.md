@@ -58,6 +58,9 @@ https://www.youtube.com/@LetsAttune and Let's Attune's Instagram.
 - Plain HTML + CSS + vanilla JavaScript — no frameworks, no build tools
 - Shared `styles.css` + `main.js` (design/behaviour centralised); header/footer markup is
   duplicated per page on purpose — see ADR 0001. Do not introduce a templating layer/SSG.
+- A few shared pieces are added by `main.js` at load time, not written in each page: the
+  "Work with us" dropdown in the nav, the social links in the footer's Connect column, and the
+  Privacy link in the footer. Change those in `main.js`, not page by page.
 - Fonts (Google Fonts): **Fraunces** (display/headlines/brand) + **Poppins** (body/UI)
 - No npm, no bundler, no server needed
 
@@ -73,67 +76,61 @@ Sampled from the brand palette file (`assets/Lets attune pallet.jpeg`) — CSS v
 ## File Structure
 ```
 /
-├── index.html          # Homepage
-├── about.html          # About — Shilpa's bio, values, philosophy, modalities
-├── workshops.html      # Current workshop landing page
-├── styles.css          # Shared design system
-├── main.js             # Shared behaviour (header, nav, reveal, typewriter)
-├── CNAME               # Custom domain (letsattune.com)
-├── CLAUDE.md           # This file
-├── CONTEXT.md          # Brand & content vocabulary (source of truth for copy)
-├── docs/adr/           # Architecture decision records
-└── assets/
-    ├── Lets Attune logo.png    # Brand logo ('S monogram)
-    ├── Lets attune pallet.jpeg # Colour palette reference
-    ├── the-place-within.jpeg   # Sentimental forest photo (hero background)
-    ├── shilpa.jpeg             # Coach photo (small, round teaser)
-    ├── shilpa-full.jpg         # Coach photo (hi-res, About page)
-    ├── workshop.jpeg           # Workshop session photo (workshops hero banner)
-    └── qr.png                  # WhatsApp business QR (footer)
+├── index.html                  # Homepage
+├── about.html                  # About — story, founders, contributors, values
+├── coaching.html               # Individual coaching (with Shilpa)
+├── workshops.html              # Workshops for people, teams and organisations
+├── gatherings.html             # Attune Gatherings (topic-led group conversations)
+├── working-professionals.html  # Support for working professionals (with Santosh)
+├── our-work.html               # Our Work — examples and outcomes (+ our-work.css, our-work.js)
+├── contact.html                # Contact Us form
+├── privacy.html                # Privacy policy
+├── form-sample.html            # Old workshop registration sample — not linked from any page
+├── styles.css                  # Shared design system
+├── main.js                     # Shared behaviour (header, nav dropdown, footer extras, reveal)
+├── CNAME                       # Custom domain (letsattune.com)
+├── CLAUDE.md                   # This file
+├── CONTEXT.md                  # Brand & content vocabulary (source of truth for copy)
+├── docs/adr/                   # Architecture decision records
+└── assets/                     # Logo, palette, photos of Shilpa, Santosh, contributors,
+                                # workshops and gatherings, WhatsApp QR (qr.png)
 ```
 
 ## Pages
+Main nav: Work with us (dropdown: Coaching · Workshops · Gatherings · Working professionals) ·
+Our work · About · Contact us. Every page shares the same footer (company name
+"Let's Attune Pvt. Ltd.", `hello@letsattune.com`, WhatsApp, Privacy link).
 
 ### index.html — Homepage
-1. Announcement bar (current workshop) + sticky glass header
-2. Atmospheric forest hero (duotone + blur + grain), typewriter "Tune Into Yourself", 2 CTAs
-3. "Does this sound familiar?" — 6 pain-point cards
-4. How We Help — Understand → Explore → Align → Integrate (4 steps)
-5. Ways We Support — Coaching · Workshops · Listening Circles · Corporate Programs
-6. Who We Work With — pills
-7. Coach teaser → about.html
-8. Testimonials (2, static 2-up on navy)
-9. Why Let's Attune — serif manifesto
-10. CTA strip + footer (QR, links, motto)
+Forest hero → "Something needs my attention" recognition → Different ways to begin (links to the
+four service pages) → the Attune way → Our work proof → the company/people → meCove feature →
+closing invite to contact.
 
 ### about.html — About
-- Opening quote (Thich Nhat Hanh, navy band)
-- Bio with floating photo, lifelines, personal note + Contact/WhatsApp buttons
-- Values in overlapping circles (Connection, Inclusivity, Holistic Approach, Resilience, Authenticity, Awareness)
-- Philosophy vertical ovals: Express → Explore → Empower → Evolve, with belief quote closing
-- Beyond Coaching — plain pipe-separated modalities (no pill buttons)
-- Blog links placeholder
-- Let's Connect CTA + footer
+Hero with founder portraits → story → what Let's Attune brings together → philosophy → founders
+(Shilpa, Santosh) → contributors (Pramitha, Dev) → values → reflections → closing invite.
 
-### workshops.html — Current workshop (nav label: "Upcoming Event")
-- Women's Reset & Reconnection Workshop (Jul 24–26 2026). Hardcoded but easy to swap.
-- Who-it's-for, "are you / wouldn't you rather" compare, what-we-explore, Primary Facilitator (Shilpa), Supporting Facilitator (Kalki), reserve CTA.
-- Registration via modal pop-up form → Formspree. Dynamic pricing: ₹1,999 until 10 July, ₹2,999 after.
+### coaching.html · workshops.html · gatherings.html · working-professionals.html
+One page per way of working with Let's Attune. Each ends with a call to contact. Coaching is led by
+Shilpa; working professionals by Santosh. `workshops.html` is now a general workshops page — the old
+July 2026 workshop page, its registration pop-up and UPI payment step are gone.
 
-### contact.html — Contact Us (NEW)
-- Get in touch form (name, phone, email, topic, message) → Formspree
-- Sidebar: direct contact, WhatsApp QR, Shilpa quote
+### our-work.html — Our Work
+Support examples grouped by what is bothering the person, with optional tabs (`our-work.js`).
+
+### contact.html — Contact Us
+Form (name, phone, email, topic, message) → Formspree. Sidebar: direct contact, WhatsApp QR.
+
+### privacy.html — Privacy policy
 
 ## Booking / contact
-- Workshop registration → modal form → Formspree (`formspree.io/f/mgojvkwl`) → shilpa@letsattune.com
-- General contact → contact.html (also Formspree, same endpoint)
-- WhatsApp `wa.me/918080166955` · email `shilpa@letsattune.com`
-- No Calendly. Google Form link (forms.gle/p1m3mecHvxKqkyVN9) no longer used in nav.
-- Payment: UPI QR (assets/upi-qr.svg) shown after registration. ₹1,999 early bird until 10 July 2026, ₹2,999 after.
+- All enquiries → contact.html → Formspree (`formspree.io/f/mgojvkwl`) → shilpa@letsattune.com
+- WhatsApp `wa.me/918080166955` · public email `hello@letsattune.com`
+- No Calendly, no online payment on the site at the moment.
 
 ## Effects Used
-- Typewriter hero headline · sticky shrinking glass header · scroll fade-ins (IntersectionObserver)
-- Card/step hover lift · pill hover · animated announce-bar pulse · forest duotone hero
+- Sticky shrinking glass header · scroll fade-ins (IntersectionObserver) · card hover lift
+- `main.js` still has the typewriter code, but no page uses it now
 - All motion respects `prefers-reduced-motion`
 
 ## Local Preview
@@ -149,7 +146,7 @@ All JS effects work fine locally (no API calls or network requests).
 ## Business Info
 - Business: Let's Attune — life & executive coaching
 - Coach: Shilpa Jahagirdar (PCC, ICF Certified)
-- Email: shilpa@letsattune.com
-- Phone: +8080166955
+- Email: shilpa@letsattune.com (public address on the site: hello@letsattune.com)
+- Phone: +91 8080166955
 - Contact form: https://forms.gle/p1m3mecHvxKqkyVN9
 - Original Google Sites: https://www.letsattune.com/
